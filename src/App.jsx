@@ -23,6 +23,7 @@ import Register from './pages/Register';
 import Profile from './pages/Profile';
 import Layout from './components/Layout';
 import ScrollToTop from './components/ScrollToTop';
+import PageTitle from './components/PageTitle';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -47,6 +48,7 @@ const AuthenticatedApp = () => {
   return (
     <>
       <ScrollToTop />
+      <PageTitle />
       <Routes>
       <Route element={<Layout />}>
         <Route path="/" element={<Home />} />

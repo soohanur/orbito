@@ -5,7 +5,7 @@ import AnimatedText from "@/components/AnimatedText";
 import AnimatedImage from "@/components/AnimatedImage";
 import { blogPosts } from "@/lib/blogData";
 
-const categories = ["All", "Market Reports", "Buyer Guides", "Seller Guides", "Renter Guides", "Neighborhood Deep Dives", "Philadelphia"];
+const categories = ["All", "Market Reports", "Buyer Guides", "Seller Guides"];
 
 export default function Blog() {
   const [query, setQuery] = useState("");

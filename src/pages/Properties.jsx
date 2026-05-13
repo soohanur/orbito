@@ -292,24 +292,6 @@ export default function Properties() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="relative overflow-hidden" style={{ paddingTop: "clamp(3rem, 9vw, 7rem)", paddingBottom: "clamp(3rem, 9vw, 7rem)", background: "#151717" }}>
-        <div className="orbito-container relative z-10">
-          <AnimatedElement>
-            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-10">
-              <h2 className="font-black tracking-tighter" style={{ fontSize: "clamp(36px, 5vw, 68px)", lineHeight: 0.93, color: "#F1F1F1", letterSpacing: "-0.04em" }}>
-                Ready to find<br /><span style={{ color: "rgba(241,241,241,0.35)", fontWeight: 300 }}>what moves you?</span>
-              </h2>
-              <Link to="/Agents">
-                <button className="group shrink-0 inline-flex items-center gap-3 rounded-full text-sm font-semibold tracking-widest uppercase transition-all duration-400 hover:-translate-y-0.5 px-10 py-5" style={{ background: "#F1F1F1", color: "#151717" }}>
-                  Talk to an Agent
-                  <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                </button>
-              </Link>
-            </div>
-          </AnimatedElement>
-        </div>
-      </section>
     </div>
   );
 }
