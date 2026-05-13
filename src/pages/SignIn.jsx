@@ -3,6 +3,7 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Eye, EyeOff, Mail, Lock } from "lucide-react";
 import { useClientAuth } from "@/lib/ClientAuth";
+import AnimatedText from "@/components/AnimatedText";
 
 export default function SignIn() {
   const { user, signIn } = useClientAuth();
@@ -37,19 +38,23 @@ export default function SignIn() {
     <div style={{ background: "#F1F1F1", minHeight: "100vh", display: "flex", alignItems: "center", paddingTop: "clamp(100px, 12vw, 140px)", paddingBottom: "5rem" }}>
       <div className="orbito-container w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
-            <span className="text-xs tracking-[0.25em] uppercase font-medium block mb-5" style={{ color: "#B3B3B3" }}>
+          <div>
+            <AnimatedText as="span" className="text-xs tracking-[0.25em] uppercase font-medium block mb-5" style={{ color: "#B3B3B3" }}>
               Welcome back
-            </span>
-            <h1 className="font-black tracking-tighter mb-6"
-              style={{ fontSize: "clamp(48px, 7vw, 96px)", lineHeight: 0.92, color: "#151717", letterSpacing: "-0.04em" }}>
-              Sign in to<br />
-              <span style={{ color: "#B3B3B3", fontWeight: 300 }}>Orbito.</span>
-            </h1>
-            <p className="font-light text-lg" style={{ color: "#383A3A", maxWidth: "460px" }}>
+            </AnimatedText>
+            <AnimatedText
+              as="h1"
+              splitWords
+              delay={0.05}
+              className="font-black tracking-tighter mb-6"
+              style={{ fontSize: "clamp(48px, 7vw, 96px)", lineHeight: 0.92, color: "#151717", letterSpacing: "-0.04em" }}
+            >
+              Sign in to Orbito.
+            </AnimatedText>
+            <AnimatedText as="p" delay={0.2} className="font-light text-lg" style={{ color: "#383A3A", maxWidth: "460px" }}>
               Pick up where you left off. Saved homes, tour requests, and your agent — all in one place.
-            </p>
-          </motion.div>
+            </AnimatedText>
+          </div>
 
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }}>
             <div className="p-8 sm:p-10 rounded-3xl" style={{ background: "#fff", border: "1px solid rgba(21,23,23,0.06)", boxShadow: "0 8px 40px rgba(21,23,23,0.06)" }}>

@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, MapPin, Star, Search } from "lucide-react";
 import { Link } from "react-router-dom";
 import { agents, badgeColors, agentSlug } from "@/lib/agentsData";
+import AnimatedText from "@/components/AnimatedText";
 
 const AnimatedElement = ({ children, className, delay = 0 }) => {
   const ref = useRef(null);
@@ -47,18 +48,22 @@ export default function Agents() {
     <div style={{ background: "#F1F1F1", minHeight: "100vh" }}>
       <section style={{ background: "#F1F1F1", paddingTop: "clamp(100px, 14vw, 160px)", paddingBottom: "3rem" }}>
         <div className="orbito-container">
-          <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-            <h1
-              className="font-black tracking-tighter"
-              style={{ fontSize: "clamp(64px, 10vw, 140px)", lineHeight: 0.9, color: "#151717", letterSpacing: "-0.05em" }}
-            >
-              Meet Our<br />
-              <span style={{ color: "#B3B3B3", fontWeight: 300 }}>Agents.</span>
-            </h1>
-            <p className="font-light mt-6" style={{ fontSize: "clamp(15px, 1.6vw, 18px)", color: "#383A3A", maxWidth: "420px" }}>
-              Over 1,000 Agents Dedicated to Moving You Forward
-            </p>
-          </motion.div>
+          <AnimatedText
+            as="h1"
+            splitWords
+            className="font-black tracking-tighter"
+            style={{ fontSize: "clamp(64px, 10vw, 140px)", lineHeight: 0.9, color: "#151717", letterSpacing: "-0.05em" }}
+          >
+            Meet Our Agents.
+          </AnimatedText>
+          <AnimatedText
+            as="p"
+            delay={0.25}
+            className="font-light mt-6"
+            style={{ fontSize: "clamp(15px, 1.6vw, 18px)", color: "#383A3A", maxWidth: "420px" }}
+          >
+            Over 1,000 Agents Dedicated to Moving You Forward
+          </AnimatedText>
         </div>
       </section>
 

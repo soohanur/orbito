@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import AnimatedText from "@/components/AnimatedText";
+import AnimatedImage from "@/components/AnimatedImage";
 import { ArrowRight, Quote } from "lucide-react";
 import { Link } from "react-router-dom";
 import { base44 } from "@/api/base44Client";
@@ -34,40 +36,38 @@ function HeroSection() {
       style={{ height: "100vh" }}
     >
       {/* Full-screen background image */}
-      <div className="absolute inset-0 z-0">
+      <AnimatedImage className="absolute inset-0 z-0">
         <img
           src="https://media.base44.com/images/public/6a032fba9f62b5c5d93ca681/d7a9a3bf9_1.png"
           alt=""
           className="w-full h-full object-cover object-center"
         />
-      </div>
+      </AnimatedImage>
 
       {/* Text + CTA — centered, over the sky */}
       <div
         className="relative z-10 flex flex-col items-center text-center"
         style={{ paddingLeft: "1.5rem", paddingRight: "1.5rem", marginTop: "-165px" }}
       >
-        <motion.h1
-          initial={{ opacity: 0, y: 32 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
+        <AnimatedText
+          as="h1"
+          splitWords
           className="font-black tracking-tighter leading-none"
           style={{ fontSize: "clamp(48px, 8vw, 112px)", color: "#151717", letterSpacing: "-0.04em", marginBottom: "1.25rem" }}
         >
           Move Into What's Next
-        </motion.h1>
+        </AnimatedText>
 
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.25 }}
+        <AnimatedText
+          as="p"
+          delay={0.25}
           className="text-base sm:text-lg leading-relaxed"
           style={{ marginBottom: "2rem" }}
         >
           <span style={{ color: "#151717", fontWeight: 500 }}>Expert agents. Real guidance.</span>
           {" "}
           <span style={{ color: "rgba(21,23,23,0.45)" }}>A clear path to find what's next.</span>
-        </motion.p>
+        </AnimatedText>
 
         <motion.div
           initial={{ opacity: 0, scale: 0.94 }}

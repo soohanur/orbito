@@ -4,6 +4,8 @@ import { ArrowRight, Search, Bed, Bath, Maximize2, MapPin, Heart, ChevronDown } 
 import { Link } from "react-router-dom";
 import { propertyListings, tagColors, propertySlug } from "@/lib/propertiesData";
 import { useClientAuth } from "@/lib/ClientAuth";
+import AnimatedText from "@/components/AnimatedText";
+import AnimatedImage from "@/components/AnimatedImage";
 
 const AnimatedElement = ({ children, className, delay = 0 }) => {
   const ref = useRef(null);
@@ -74,7 +76,7 @@ export default function Properties() {
     <div style={{ background: "#F1F1F1" }}>
       {/* Hero */}
       <section className="relative flex items-end overflow-hidden" style={{ minHeight: "56vh" }}>
-        <div className="absolute inset-0">
+        <AnimatedImage className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1800&h=800&fit=crop"
             alt=""
@@ -82,15 +84,20 @@ export default function Properties() {
             style={{ filter: "brightness(0.35)" }}
           />
           <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(21,23,23,0.95) 0%, rgba(21,23,23,0.15) 60%, transparent 100%)" }} />
-        </div>
+        </AnimatedImage>
         <div className="relative z-10 orbito-container pb-20 w-full">
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9 }}>
-            <span className="text-xs tracking-[0.25em] uppercase font-medium block mb-5" style={{ color: "rgba(241,241,241,0.4)" }}>Property</span>
-            <h1 className="font-black tracking-tighter" style={{ fontSize: "clamp(44px, 6.5vw, 88px)", lineHeight: 0.93, color: "#F1F1F1", letterSpacing: "-0.04em" }}>
-              Find Your<br />
-              <span style={{ color: "rgba(241,241,241,0.4)", fontWeight: 300 }}>Next Place.</span>
-            </h1>
-          </motion.div>
+          <AnimatedText className="text-xs tracking-[0.25em] uppercase font-medium block mb-5" as="span" style={{ color: "rgba(241,241,241,0.4)" }}>
+            Property
+          </AnimatedText>
+          <AnimatedText
+            as="h1"
+            splitWords
+            delay={0.1}
+            className="font-black tracking-tighter"
+            style={{ fontSize: "clamp(44px, 6.5vw, 88px)", lineHeight: 0.93, color: "#F1F1F1", letterSpacing: "-0.04em" }}
+          >
+            Find Your Next Place.
+          </AnimatedText>
         </div>
       </section>
 

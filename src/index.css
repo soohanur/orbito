@@ -123,6 +123,37 @@ body {
   100% { transform: scale(1.06); }
 }
 
+/* ─── GSAP reveal initial states (no FOUC) ─── */
+.anim-text {
+  opacity: 0;
+  transform: translateY(20px);
+  will-change: transform, opacity;
+}
+.anim-text-words {
+  /* container itself stays visible; child .anim-word elements carry the hidden state */
+  opacity: 1;
+}
+.anim-word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(0.6em);
+  will-change: transform, opacity;
+}
+.anim-img {
+  opacity: 0;
+  transform: scale(1.02);
+  will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-text,
+  .anim-word,
+  .anim-img {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
 /* ─── Scrollbar ─── */
 
 ::-webkit-scrollbar { width: 5px; }
