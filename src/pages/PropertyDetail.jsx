@@ -49,9 +49,9 @@ export default function PropertyDetail() {
 
   const heroImages = [
     property.image,
-    "https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=1200&h=800&fit=crop",
-    "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&h=800&fit=crop",
-    "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=1200&h=800&fit=crop",
+    "/images/photo-1505691938895-1758d7feb511-d9f9f61fcf00.jpg",
+    "/images/photo-1556909114-f6e7ad7d3136-2cc83fc447ef.jpg",
+    "/images/photo-1493809842364-78817add7ffb-d2eb4694ae72.jpg",
   ];
 
   const features = [

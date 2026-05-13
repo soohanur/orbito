@@ -38,7 +38,7 @@ function HeroSection() {
       {/* Full-screen background image */}
       <AnimatedImage className="absolute inset-0 z-0">
         <img
-          src="https://media.base44.com/images/public/6a032fba9f62b5c5d93ca681/d7a9a3bf9_1.png"
+          src="/images/d7a9a3bf9-1-219a8270cdce.png"
           alt=""
           className="w-full h-full object-cover object-center"
         />
@@ -123,7 +123,7 @@ function WhyOrbitoSection() {
         <div className="orbito-container">
           <div className="overflow-hidden" style={{ borderRadius: "1.5rem", maxHeight: "520px" }}>
             <img
-              src="/houses.jpg"
+              src="/croped.jpg"
               alt="Neighborhood"
               className="w-full object-cover hover:scale-105 transition-transform duration-[18s] ease-out"
               style={{ height: "100%", maxHeight: "520px", objectPosition: "center" }} />
@@ -145,10 +145,10 @@ function ForAgentsSection() {
           <AnimatedElement delay={100}>
             <div className="grid grid-cols-2 gap-4 h-full" style={{ minHeight: "540px" }}>
               <div className="overflow-hidden" style={{ borderRadius: "1rem", aspectRatio: "3/4" }}>
-                <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&h=800&fit=crop" alt="" className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-700" />
+                <img src="/images/photo-1600880292203-757bb62b4baf-6f2327881272.jpg" alt="" className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-700" />
               </div>
               <div className="overflow-hidden mt-10" style={{ borderRadius: "1rem", aspectRatio: "3/4" }}>
-                <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600&h=800&fit=crop" alt="" className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-700" />
+                <img src="/images/photo-1521737711867-e3b97375f902-bc0105f83be0.jpg" alt="" className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-700" />
               </div>
             </div>
           </AnimatedElement>
@@ -183,7 +183,7 @@ function ForAgentsSection() {
                   {/* Background image blend */}
                   <div className="absolute inset-0 opacity-20">
                     <img
-                      src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&h=400&fit=crop"
+                      src="/images/photo-1600880292203-757bb62b4baf-726ecd2d7172.jpg"
                       alt=""
                       className="w-full h-full object-cover" />
                     
@@ -251,7 +251,7 @@ function TestimonialsSection() {
         <div className="grid md:grid-cols-2 gap-16 md:gap-24 items-center">
           <AnimatedElement delay={100}>
             <div className="overflow-hidden" style={{ borderRadius: "1.5rem", aspectRatio: "4/5" }}>
-              <img src="https://media.base44.com/images/public/6a031b2b649f3814456c1a02/857365a27_findrealestate_com_152131ac7_93e05ccf.jpg" alt="Happy clients" className="w-full h-full object-cover hover:scale-105 transition-transform duration-[12s]" />
+              <img src="/images/857365a27-findrealestate-com-152-1bb768b0da88.jpg" alt="Happy clients" className="w-full h-full object-cover hover:scale-105 transition-transform duration-[12s]" />
             </div>
           </AnimatedElement>
 
@@ -309,9 +309,9 @@ function TestimonialsSection() {
 /* ── SERVICES ── */
 function ServicesSection() {
   const services = [
-  { label: "Buy", image: "https://media.base44.com/images/public/6a031b2b649f3814456c1a02/5abf9e628_findrealestate_com_buyfed72bc8_380cb417.jpg", description: "Buy smarter with expert agents backed by mortgage, legal, and appraisal pros — dialed in to get you the best deal, fast. We've done this over 10,000 times, and we know what wins." },
-  { label: "Sell", image: "https://media.base44.com/images/public/6a031b2b649f3814456c1a02/fcca5e9fd_findrealestate_com_sell90b8e66b_96c2b79c.jpg", description: "Sell fast, sell high. Your listing gets pro staging, strategic pricing, constant open houses, and agents who never stop working until the right buyer signs." },
-  { label: "Rent", image: "https://media.base44.com/images/public/6a031b2b649f3814456c1a02/2b4b2f5a9_findrealestate_com_rent6736c732_87b9eef4.jpg", description: "Access hidden rentals before they hit the market through agents who know every landlord in town. With decades of NYC experience, we unlock the best deals you won't find online." }];
+  { label: "Buy", image: "/images/5abf9e628-findrealestate-com-buy-4c228619891a.jpg", description: "Buy smarter with expert agents backed by mortgage, legal, and appraisal pros — dialed in to get you the best deal, fast. We've done this over 10,000 times, and we know what wins." },
+  { label: "Sell", image: "/images/fcca5e9fd-findrealestate-com-sel-e187393c02ac.jpg", description: "Sell fast, sell high. Your listing gets pro staging, strategic pricing, constant open houses, and agents who never stop working until the right buyer signs." },
+  { label: "Rent", image: "/images/2b4b2f5a9-findrealestate-com-ren-5ea1ad3acb4c.jpg", description: "Access hidden rentals before they hit the market through agents who know every landlord in town. With decades of NYC experience, we unlock the best deals you won't find online." }];
 
 
   return (
@@ -382,9 +382,9 @@ function SupportSection() {
   const [loading, setLoading] = useState(true);
 
   const staticFallback = [
-  { title: "Mortgage Services", description: "Helping you secure your dream home with flexible mortgage options.", image_url: "https://media.base44.com/images/public/6a031b2b649f3814456c1a02/b774f34cb_findrealestate_com_mortgage-servicese92904b1_009353ed.jpg" },
-  { title: "Property Management", description: "Let us handle the details so you can enjoy the rewards.", image_url: "https://media.base44.com/images/public/6a031b2b649f3814456c1a02/5e8fd2262_findrealestate_com_property-management7a9cbb34_d27dd3e4.jpg" },
-  { title: "Construction & Development", description: "Guiding you through building and developing properties with expert insight.", image_url: "https://media.base44.com/images/public/6a031b2b649f3814456c1a02/4ee46fcdc_findrealestate_com_development0de63e1b_54e494ff.jpg" }];
+  { title: "Mortgage Services", description: "Helping you secure your dream home with flexible mortgage options.", image_url: "/images/b774f34cb-findrealestate-com-mor-a90fcee891c3.jpg" },
+  { title: "Property Management", description: "Let us handle the details so you can enjoy the rewards.", image_url: "/images/5e8fd2262-findrealestate-com-pro-dbc5c56b7560.jpg" },
+  { title: "Construction & Development", description: "Guiding you through building and developing properties with expert insight.", image_url: "/images/4ee46fcdc-findrealestate-com-dev-fb4fc37e4ec7.jpg" }];
 
 
   useEffect(() => {
@@ -449,9 +449,9 @@ function BlogSection() {
   const [loading, setLoading] = useState(true);
 
   const staticFallback = [
-  { date: "2026-04-13", title: "Q1 2026 NYC Market Report", excerpt: "Q1 2026 saw strong rental demand, active sales, and shifting pricing across NYC. Here's what it means heading into the spring market.", image_url: "https://media.base44.com/images/public/6a031b2b649f3814456c1a02/55592eadd_fresh-boot-3c0a0dc212_media_strapiapp_com_nyc_604e40fa02_215269bf.png" },
-  { date: "2026-04-01", title: "Philly Real Estate: A Winter Chill or a Spring Opportunity?", excerpt: "Record-low listings and steady price growth define a unique February for the Philadelphia Metro.", image_url: "https://media.base44.com/images/public/6a031b2b649f3814456c1a02/28dd61f46_fresh-boot-3c0a0dc212_media_strapiapp_com_jonathan_gong_tl3jdt_Z_u_YM_unsplash_5f055e7e75_051daa14.jpg" },
-  { date: "2026-03-09", title: "What $1M Buys in Different NYC Neighborhoods", excerpt: "Curious what $1M can still buy in today's NYC market? Explore a snapshot of available listings across Manhattan.", image_url: "https://media.base44.com/images/public/6a031b2b649f3814456c1a02/d2176ce77_fresh-boot-3c0a0dc212_media_strapiapp_com_gregreese_building_6662138_1920_96e6ea69b1_d1f0adec.jpg" }];
+  { date: "2026-04-13", title: "Q1 2026 NYC Market Report", excerpt: "Q1 2026 saw strong rental demand, active sales, and shifting pricing across NYC. Here's what it means heading into the spring market.", image_url: "/images/55592eadd-fresh-boot-3c0a0dc212-57f5c969e787.png" },
+  { date: "2026-04-01", title: "Philly Real Estate: A Winter Chill or a Spring Opportunity?", excerpt: "Record-low listings and steady price growth define a unique February for the Philadelphia Metro.", image_url: "/images/28dd61f46-fresh-boot-3c0a0dc212-c7c31e4dccc3.jpg" },
+  { date: "2026-03-09", title: "What $1M Buys in Different NYC Neighborhoods", excerpt: "Curious what $1M can still buy in today's NYC market? Explore a snapshot of available listings across Manhattan.", image_url: "/images/d2176ce77-fresh-boot-3c0a0dc212-be1949c06cb7.jpg" }];
 
 
   useEffect(() => {
@@ -519,7 +519,7 @@ function FinalCtaSection() {
     <section className="relative overflow-hidden flex items-center justify-center" style={{ paddingTop: "10rem", paddingBottom: "10rem" }}>
       <div className="absolute inset-0 z-0">
         <img
-          src="https://media.base44.com/images/public/6a031b2b649f3814456c1a02/90de1b44d_findrealestate_com_bgec610793_759c5b57.jpg"
+          src="/images/90de1b44d-findrealestate-com-bge-0bc069dacb6e.jpg"
           alt=""
           className="w-full h-full object-cover"
           style={{ animation: "kenBurns 20s ease-out infinite alternate" }} />

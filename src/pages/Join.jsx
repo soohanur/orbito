@@ -66,7 +66,7 @@ export default function Join() {
       <section className="relative min-h-[62vh] flex items-end overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://media.base44.com/images/public/6a031b2b649f3814456c1a02/7d130d024_findrealestate_com_1f6e8f2e8_dc7820a7.jpg"
+            src="/images/7d130d024-findrealestate-com-1f6-e4c983d93a08.jpg"
             alt=""
             className="w-full h-full object-cover object-center"
             style={{ filter: "brightness(0.42)" }}
@@ -107,7 +107,7 @@ export default function Join() {
               </div>
               <div className="overflow-hidden" style={{ borderRadius: "0.75rem" }}>
                 <img
-                  src="https://media.base44.com/images/public/6a031b2b649f3814456c1a02/d137d1f02_findrealestate_com_241633fa6_a5d1adde.jpg"
+                  src="/images/d137d1f02-findrealestate-com-241-09c99d11525f.jpg"
                   alt=""
                   className="w-full object-cover hover:scale-[1.02] transition-transform duration-700"
                   style={{ aspectRatio: "4/3" }}
@@ -157,7 +157,7 @@ export default function Join() {
               </div>
               <div className="overflow-hidden" style={{ borderRadius: "0.75rem", aspectRatio: "3/4" }}>
                 <img
-                  src="https://media.base44.com/images/public/6a031b2b649f3814456c1a02/857365a27_findrealestate_com_152131ac7_93e05ccf.jpg"
+                  src="/images/857365a27-findrealestate-com-152-1bb768b0da88.jpg"
                   alt=""
                   className="w-full h-full object-cover hover:scale-[1.02] transition-transform duration-700"
                 />

@@ -63,7 +63,7 @@ export default function About() {
         <div className="orbito-container mb-24">
           <div className="w-full overflow-hidden" style={{ borderRadius: "1.5rem", maxHeight: "560px" }}>
             <img
-              src="/houses.jpg"
+              src="/croped.jpg"
               alt="Orbito"
               className="w-full object-cover hover:scale-105 transition-transform duration-[18s] ease-out"
               style={{ objectPosition: "center", height: "560px" }}
@@ -140,10 +140,10 @@ export default function About() {
         <div className="orbito-container mb-24">
           <div className="grid sm:grid-cols-2 gap-5">
             <div className="overflow-hidden" style={{ borderRadius: "1rem", aspectRatio: "4/3" }}>
-              <img src="https://media.base44.com/images/public/6a031b2b649f3814456c1a02/9353267dd_findrealestate_com_1e7a1ff18_f608167e.jpg" alt="" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+              <img src="/images/9353267dd-findrealestate-com-1e7-404ac71727e7.jpg" alt="" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
             </div>
             <div className="overflow-hidden" style={{ borderRadius: "1rem", aspectRatio: "4/3" }}>
-              <img src="https://media.base44.com/images/public/6a031b2b649f3814456c1a02/b775be0a6_findrealestate_com_3483e04ae_2fed5ba1.jpg" alt="" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+              <img src="/images/b775be0a6-findrealestate-com-348-34a4946637e9.jpg" alt="" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
             </div>
           </div>
         </div>

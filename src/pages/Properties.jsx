@@ -78,7 +78,7 @@ export default function Properties() {
       <section className="relative flex items-end overflow-hidden" style={{ minHeight: "56vh" }}>
         <AnimatedImage className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1800&h=800&fit=crop"
+            src="/images/photo-1486325212027-8081e485255e-2e21257bec98.jpg"
             alt=""
             className="w-full h-full object-cover object-center"
             style={{ filter: "brightness(0.35)" }}
