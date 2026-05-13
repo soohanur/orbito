@@ -310,7 +310,7 @@ export default function PropertyDetail() {
       </section>
 
       {/* Related */}
-      <section style={{ paddingTop: "3rem", paddingBottom: "6rem" }}>
+      <section style={{ paddingTop: "clamp(2rem, 5vw, 3rem)", paddingBottom: "clamp(2.5rem, 8vw, 6rem)" }}>
         <div className="orbito-container">
           <div className="flex items-end justify-between mb-8">
             <h2 className="font-black tracking-tighter" style={{ fontSize: "clamp(28px, 3.5vw, 44px)", color: "#151717", letterSpacing: "-0.03em" }}>
@@ -348,7 +348,7 @@ export default function PropertyDetail() {
       </section>
 
       {/* CTA */}
-      <section className="overflow-hidden" style={{ paddingTop: "5rem", paddingBottom: "5rem", background: "#151717" }}>
+      <section className="overflow-hidden" style={{ paddingTop: "clamp(2.5rem, 7vw, 5rem)", paddingBottom: "clamp(2.5rem, 7vw, 5rem)", background: "#151717" }}>
         <div className="orbito-container">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
             <h2 className="font-black tracking-tighter" style={{ fontSize: "clamp(32px, 4vw, 56px)", lineHeight: 0.95, color: "#F1F1F1", letterSpacing: "-0.03em" }}>

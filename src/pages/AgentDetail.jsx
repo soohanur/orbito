@@ -252,7 +252,7 @@ export default function AgentDetail() {
       </section>
 
       {/* Other agents */}
-      <section style={{ paddingTop: "3rem", paddingBottom: "6rem" }}>
+      <section style={{ paddingTop: "clamp(2rem, 5vw, 3rem)", paddingBottom: "clamp(2.5rem, 8vw, 6rem)" }}>
         <div className="orbito-container">
           <div className="flex items-end justify-between mb-8">
             <h2 className="font-black tracking-tighter" style={{ fontSize: "clamp(28px, 3.5vw, 44px)", color: "#151717", letterSpacing: "-0.03em" }}>

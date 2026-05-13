@@ -45,7 +45,7 @@ export default function About() {
     <div style={{ background: "#F1F1F1", minHeight: "100vh" }}>
 
       {/* Hero */}
-      <section style={{ paddingTop: "9rem", paddingBottom: "6rem" }}>
+      <section style={{ paddingTop: "clamp(6rem, 11vw, 9rem)", paddingBottom: "clamp(2.5rem, 8vw, 6rem)" }}>
         <div className="orbito-container">
           <div>
             <AnimatedText as="span" className="text-xs tracking-[0.22em] uppercase font-bold block mb-6" style={{ color: "#B3B3B3" }}>
@@ -123,7 +123,7 @@ export default function About() {
 
       {/* Stats */}
       <AnimatedElement>
-        <section style={{ background: "#151717", paddingTop: "5rem", paddingBottom: "5rem" }}>
+        <section style={{ background: "#151717", paddingTop: "clamp(2.5rem, 7vw, 5rem)", paddingBottom: "clamp(2.5rem, 7vw, 5rem)" }}>
           <div className="orbito-container">
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-10">
               {stats.map((s, i) => (
@@ -139,7 +139,7 @@ export default function About() {
 
       {/* Values */}
       <AnimatedElement>
-        <section style={{ paddingTop: "7rem", paddingBottom: "7rem", background: "#F1F1F1" }}>
+        <section style={{ paddingTop: "clamp(3rem, 9vw, 7rem)", paddingBottom: "clamp(3rem, 9vw, 7rem)", background: "#F1F1F1" }}>
           <div className="orbito-container">
             <h2 className="font-black tracking-tighter mb-16" style={{ fontSize: "clamp(40px, 5vw, 68px)", lineHeight: 0.93, color: "#151717", letterSpacing: "-0.04em" }}>
               What We<br /><span style={{ color: "#B3B3B3", fontWeight: 300 }}>Stand For</span>
@@ -173,7 +173,7 @@ export default function About() {
       </AnimatedElement>
 
       {/* CTA */}
-      <section style={{ background: "#151717", paddingTop: "7rem", paddingBottom: "7rem" }}>
+      <section style={{ background: "#151717", paddingTop: "clamp(3rem, 9vw, 7rem)", paddingBottom: "clamp(3rem, 9vw, 7rem)" }}>
         <div className="orbito-container">
           <AnimatedElement>
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-10">

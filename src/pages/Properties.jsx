@@ -151,7 +151,7 @@ export default function Properties() {
       </div>
 
       {/* Listings */}
-      <section style={{ paddingTop: "3.5rem", paddingBottom: "6rem" }}>
+      <section style={{ paddingTop: "clamp(2rem, 5vw, 3.5rem)", paddingBottom: "clamp(2.5rem, 8vw, 6rem)" }}>
         <div className="orbito-container">
           {filtered.length === 0 ? (
             <div className="py-32 text-center">
@@ -293,7 +293,7 @@ export default function Properties() {
       </section>
 
       {/* CTA */}
-      <section className="relative overflow-hidden" style={{ paddingTop: "7rem", paddingBottom: "7rem", background: "#151717" }}>
+      <section className="relative overflow-hidden" style={{ paddingTop: "clamp(3rem, 9vw, 7rem)", paddingBottom: "clamp(3rem, 9vw, 7rem)", background: "#151717" }}>
         <div className="orbito-container relative z-10">
           <AnimatedElement>
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-10">

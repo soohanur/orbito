@@ -67,7 +67,7 @@ export default function Agents() {
         </div>
       </section>
 
-      <section style={{ paddingTop: "2rem", paddingBottom: "6rem" }}>
+      <section style={{ paddingTop: "clamp(1.5rem, 4vw, 2rem)", paddingBottom: "clamp(2.5rem, 8vw, 6rem)" }}>
         <div className="orbito-container">
           <div className="flex flex-col sm:flex-row gap-3 items-start sm:items-center mb-10">
             <div className="relative flex-shrink-0">
@@ -188,7 +188,7 @@ export default function Agents() {
         </div>
       </section>
 
-      <section style={{ background: "#151717", paddingTop: "7rem", paddingBottom: "7rem" }}>
+      <section style={{ background: "#151717", paddingTop: "clamp(3rem, 9vw, 7rem)", paddingBottom: "clamp(3rem, 9vw, 7rem)" }}>
         <div className="orbito-container">
           <AnimatedElement>
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-10">

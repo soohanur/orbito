@@ -92,7 +92,7 @@ function HeroSection() {
 /* ── WHY ORBITO ── */
 function WhyOrbitoSection() {
   return (
-    <section style={{ background: "#F1F1F1", paddingTop: "7rem", paddingBottom: "7rem" }}>
+    <section style={{ background: "#F1F1F1", paddingTop: "clamp(3rem, 9vw, 7rem)", paddingBottom: "clamp(3rem, 9vw, 7rem)" }}>
       <div className="orbito-container">
         <AnimatedElement>
           <div className="grid md:grid-cols-2 gap-16 md:gap-24 items-start">
@@ -138,7 +138,7 @@ function WhyOrbitoSection() {
 /* ── FOR AGENTS ── */
 function ForAgentsSection() {
   return (
-    <section style={{ background: "#F1F1F1", paddingTop: "7rem", paddingBottom: "7rem", borderTop: "1px solid rgba(21,23,23,0.08)" }}>
+    <section style={{ background: "#F1F1F1", paddingTop: "clamp(3rem, 9vw, 7rem)", paddingBottom: "clamp(3rem, 9vw, 7rem)", borderTop: "1px solid rgba(21,23,23,0.08)" }}>
       <div className="orbito-container">
         <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-stretch">
           {/* Left — images grid (agents side) */}
@@ -240,7 +240,7 @@ function TestimonialsSection() {
   }, [items.length]);
 
   return (
-    <section style={{ background: "#f5f4f0", paddingTop: "7rem", paddingBottom: "7rem", borderTop: "1px solid rgba(21,23,23,0.06)" }}>
+    <section style={{ background: "#f5f4f0", paddingTop: "clamp(3rem, 9vw, 7rem)", paddingBottom: "clamp(3rem, 9vw, 7rem)", borderTop: "1px solid rgba(21,23,23,0.06)" }}>
       <div className="orbito-container">
         <AnimatedElement>
           <h2 className="font-black tracking-tighter mb-16" style={{ fontSize: "clamp(40px, 5vw, 68px)", lineHeight: 0.95, color: "#151717", letterSpacing: "-0.04em" }}>
@@ -315,7 +315,7 @@ function ServicesSection() {
 
 
   return (
-    <section style={{ background: "#151717", color: "#F1F1F1", paddingTop: "7rem" }}>
+    <section style={{ background: "#151717", color: "#F1F1F1", paddingTop: "clamp(3rem, 9vw, 7rem)" }}>
       <div className="orbito-container" style={{ paddingBottom: "4rem" }}>
         <AnimatedElement>
           <span className="text-xs tracking-[0.22em] uppercase font-bold block mb-6" style={{ color: "rgba(241,241,241,0.4)", borderBottom: "1px solid rgba(241,241,241,0.15)", paddingBottom: "0.5rem", display: "inline-block" }}>Services</span>
@@ -397,7 +397,7 @@ function SupportSection() {
   const items = services.length > 0 ? services : staticFallback;
 
   return (
-    <section style={{ background: "#151717", color: "#F1F1F1", paddingTop: "7rem", paddingBottom: "7rem", borderTop: "1px solid rgba(241,241,241,0.1)" }}>
+    <section style={{ background: "#151717", color: "#F1F1F1", paddingTop: "clamp(3rem, 9vw, 7rem)", paddingBottom: "clamp(3rem, 9vw, 7rem)", borderTop: "1px solid rgba(241,241,241,0.1)" }}>
       <div className="orbito-container">
         <div className="grid md:grid-cols-2 gap-16 md:gap-24 items-end mb-16">
           <AnimatedElement>
@@ -464,7 +464,7 @@ function BlogSection() {
   const items = posts.length > 0 ? posts : staticFallback;
 
   return (
-    <section style={{ background: "#F1F1F1", paddingTop: "7rem", paddingBottom: "7rem" }}>
+    <section style={{ background: "#F1F1F1", paddingTop: "clamp(3rem, 9vw, 7rem)", paddingBottom: "clamp(3rem, 9vw, 7rem)" }}>
       <div className="orbito-container">
         <div className="grid md:grid-cols-2 gap-12 items-end mb-16 pb-12" style={{ borderBottom: "1px solid rgba(21,23,23,0.1)" }}>
           <AnimatedElement>

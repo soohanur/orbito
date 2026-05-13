@@ -102,7 +102,7 @@ export default function Join() {
 
       {/* Intro */}
       <AnimatedElement>
-        <section style={{ paddingTop: "6rem", paddingBottom: "6rem" }}>
+        <section style={{ paddingTop: "clamp(3rem, 8vw, 6rem)", paddingBottom: "clamp(3rem, 8vw, 6rem)" }}>
           <div className="orbito-container">
             <div className="grid sm:grid-cols-2 gap-16 items-start">
               <div>
@@ -152,7 +152,7 @@ export default function Join() {
 
       {/* Benefits */}
       <AnimatedElement>
-        <section style={{ paddingTop: "6rem", paddingBottom: "6rem", background: "#f5f4f0" }}>
+        <section style={{ paddingTop: "clamp(3rem, 8vw, 6rem)", paddingBottom: "clamp(3rem, 8vw, 6rem)", background: "#f5f4f0" }}>
           <div className="orbito-container">
             <div className="grid sm:grid-cols-2 gap-16 items-center">
               <div>
@@ -185,7 +185,7 @@ export default function Join() {
 
       {/* Testimonials */}
       <AnimatedElement>
-        <section style={{ paddingTop: "6rem", paddingBottom: "6rem", background: "#F1F1F1" }}>
+        <section style={{ paddingTop: "clamp(3rem, 8vw, 6rem)", paddingBottom: "clamp(3rem, 8vw, 6rem)", background: "#F1F1F1" }}>
           <div className="orbito-container">
             <h2 className="font-black tracking-tighter mb-14" style={{ fontSize: "clamp(40px, 5vw, 68px)", lineHeight: 0.93, color: "#151717", letterSpacing: "-0.04em" }}>
               What Our Clients<br /><span style={{ color: "#B3B3B3", fontWeight: 300 }}>Are Saying.</span>
@@ -208,7 +208,7 @@ export default function Join() {
       </AnimatedElement>
 
       {/* CTA */}
-      <section className="relative overflow-hidden" style={{ paddingTop: "8rem", paddingBottom: "8rem", background: "#151717" }}>
+      <section className="relative overflow-hidden" style={{ paddingTop: "clamp(3rem, 10vw, 8rem)", paddingBottom: "clamp(3rem, 10vw, 8rem)", background: "#151717" }}>
         <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full blur-[120px] pointer-events-none" style={{ background: "rgba(241,241,241,0.04)" }} />
         <div className="orbito-container relative z-10">
           <AnimatedElement>
