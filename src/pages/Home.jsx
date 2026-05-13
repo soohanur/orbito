@@ -309,9 +309,9 @@ function TestimonialsSection() {
 /* ── SERVICES ── */
 function ServicesSection() {
   const services = [
-  { label: "Buy", image: "/images/5abf9e628-findrealestate-com-buy-4c228619891a.jpg", description: "Buy smarter with expert agents backed by mortgage, legal, and appraisal pros — dialed in to get you the best deal, fast. We've done this over 10,000 times, and we know what wins." },
-  { label: "Sell", image: "/images/fcca5e9fd-findrealestate-com-sel-e187393c02ac.jpg", description: "Sell fast, sell high. Your listing gets pro staging, strategic pricing, constant open houses, and agents who never stop working until the right buyer signs." },
-  { label: "Rent", image: "/images/2b4b2f5a9-findrealestate-com-ren-5ea1ad3acb4c.jpg", description: "Access hidden rentals before they hit the market through agents who know every landlord in town. With decades of NYC experience, we unlock the best deals you won't find online." }];
+  { label: "Buy", to: "/Buy", image: "/images/5abf9e628-findrealestate-com-buy-4c228619891a.jpg", description: "Buy smarter with expert agents backed by mortgage, legal, and appraisal pros — dialed in to get you the best deal, fast. We've done this over 10,000 times, and we know what wins." },
+  { label: "Sell", to: "/Sell", image: "/images/fcca5e9fd-findrealestate-com-sel-e187393c02ac.jpg", description: "Sell fast, sell high. Your listing gets pro staging, strategic pricing, constant open houses, and agents who never stop working until the right buyer signs." },
+  { label: "Rent", to: "/Rent", image: "/images/2b4b2f5a9-findrealestate-com-ren-5ea1ad3acb4c.jpg", description: "Access hidden rentals before they hit the market through agents who know every landlord in town. With decades of NYC experience, we unlock the best deals you won't find online." }];
 
 
   return (
@@ -328,10 +328,11 @@ function ServicesSection() {
       <div style={{ borderTop: "1px solid rgba(241,241,241,0.1)", borderBottom: "1px solid rgba(241,241,241,0.1)" }}>
         {services.map((svc, i) =>
         <AnimatedElement key={i} delay={i * 80}>
+            <Link to={svc.to} className="block">
             <div
-            className="group relative overflow-hidden"
+            className="group relative overflow-hidden cursor-pointer"
             style={{ height: "420px", borderBottom: i < services.length - 1 ? "1px solid rgba(241,241,241,0.1)" : "none" }}>
-            
+
               <div className="absolute inset-0">
                 <img src={svc.image} alt={svc.label} className="w-full h-full object-cover transition-transform duration-[14s] group-hover:scale-110" />
                 <div className="absolute inset-0" style={{ background: "rgba(21,23,23,0.78)" }} />
@@ -349,6 +350,7 @@ function ServicesSection() {
                 </div>
               </div>
             </div>
+            </Link>
           </AnimatedElement>
         )}
       </div>

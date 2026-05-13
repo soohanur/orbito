@@ -13,6 +13,9 @@ import Properties from './pages/Properties';
 import PropertyDetail from './pages/PropertyDetail';
 import Join from './pages/Join';
 import About from './pages/About';
+import Buy from './pages/Buy';
+import Sell from './pages/Sell';
+import Rent from './pages/Rent';
 import SignIn from './pages/SignIn';
 import Register from './pages/Register';
 import Profile from './pages/Profile';
@@ -48,6 +51,9 @@ const AuthenticatedApp = () => {
         <Route path="/Properties/:slug" element={<PropertyDetail />} />
         <Route path="/Join" element={<Join />} />
         <Route path="/About" element={<About />} />
+        <Route path="/Buy" element={<Buy />} />
+        <Route path="/Sell" element={<Sell />} />
+        <Route path="/Rent" element={<Rent />} />
         <Route path="/SignIn" element={<SignIn />} />
         <Route path="/Register" element={<Register />} />
         <Route path="/Profile" element={<Profile />} />
