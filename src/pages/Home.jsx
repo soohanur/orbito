@@ -338,7 +338,7 @@ function ServicesSection() {
               </div>
               <div className="orbito-container relative z-10 h-full flex flex-col md:flex-row items-start md:items-center justify-between gap-8 py-12">
                 <div className="flex items-center gap-6 md:w-2/5">
-                  <div className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-mono shrink-0 transition-colors duration-300 group-hover:bg-[#F1F1F1] group-hover:text-[#151717]" style={{ border: "1px solid rgba(241,241,241,0.3)", color: "#F1F1F1" }}>
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-mono shrink-0 transition-colors duration-300 text-[#F1F1F1] group-hover:bg-[#F1F1F1] group-hover:text-[#151717]" style={{ border: "1px solid rgba(241,241,241,0.3)" }}>
                     {i + 1}
                   </div>
                   <p className="text-base leading-relaxed font-light" style={{ color: "rgba(241,241,241,0.75)" }}>{svc.description}</p>
