@@ -124,6 +124,20 @@ body {
 }
 
 /* ─── GSAP reveal initial states (no FOUC) ─── */
+/* Sitewide auto-reveal: every h1-h6 not already wrapped by AnimatedText
+   starts hidden until GSAP scrolls it into view. */
+html.js-anim h1:not(.anim-text):not(.anim-text-words),
+html.js-anim h2:not(.anim-text):not(.anim-text-words),
+html.js-anim h3:not(.anim-text):not(.anim-text-words),
+html.js-anim h4:not(.anim-text):not(.anim-text-words),
+html.js-anim h5:not(.anim-text):not(.anim-text-words),
+html.js-anim h6:not(.anim-text):not(.anim-text-words) {
+  opacity: 0;
+  transform: translateY(20px);
+  will-change: transform, opacity;
+}
+
+/* Explicit wrappers (used for hero word-stagger) */
 .anim-text {
   opacity: 0;
   transform: translateY(20px);
@@ -146,6 +160,12 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html.js-anim h1,
+  html.js-anim h2,
+  html.js-anim h3,
+  html.js-anim h4,
+  html.js-anim h5,
+  html.js-anim h6,
   .anim-text,
   .anim-word,
   .anim-img {
