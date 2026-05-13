@@ -2,6 +2,8 @@ import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Check } from "lucide-react";
 import { base44 } from "@/api/base44Client";
+import AnimatedText from "@/components/AnimatedText";
+import AnimatedImage from "@/components/AnimatedImage";
 
 const AnimatedElement = ({ children, className, delay = 0 }) => {
   const ref = useRef(null);
@@ -62,25 +64,39 @@ export default function Join() {
 
   return (
     <div style={{ background: "#F1F1F1" }}>
-      {/* Hero */}
-      <section className="relative min-h-[62vh] flex items-end overflow-hidden">
-        <div className="absolute inset-0">
+      {/* Hero — mirrors Properties hero pattern */}
+      <section className="relative flex items-end overflow-hidden" style={{ minHeight: "56vh" }}>
+        <AnimatedImage className="absolute inset-0">
           <img
             src="/images/7d130d024-findrealestate-com-1f6-e4c983d93a08.jpg"
             alt=""
             className="w-full h-full object-cover object-center"
-            style={{ filter: "brightness(0.42)" }}
+            style={{ filter: "brightness(0.35)" }}
           />
-          <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(21,23,23,0.92) 0%, rgba(21,23,23,0.15) 60%, transparent 100%)" }} />
-        </div>
-
-        <div className="relative z-10 orbito-container pb-20 w-full">
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9 }}>
-            <span className="text-xs tracking-[0.25em] uppercase font-medium block mb-6" style={{ color: "rgba(241,241,241,0.45)" }}>For Agents</span>
-            <h1 className="font-black tracking-tighter" style={{ fontSize: "clamp(48px, 7vw, 96px)", lineHeight: 0.93, color: "#F1F1F1", letterSpacing: "-0.04em" }}>
-              Don't Rent<br />Your Career.<br />Own It.
-            </h1>
-          </motion.div>
+          <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(21,23,23,0.95) 0%, rgba(21,23,23,0.15) 60%, transparent 100%)" }} />
+        </AnimatedImage>
+        <div className="relative z-10 orbito-container pb-12 sm:pb-20 w-full">
+          <AnimatedText as="span" className="text-xs tracking-[0.25em] uppercase font-medium block mb-5" style={{ color: "rgba(241,241,241,0.4)" }}>
+            For Agents
+          </AnimatedText>
+          <AnimatedText
+            as="h1"
+            splitWords
+            delay={0.1}
+            className="font-black tracking-tighter"
+            style={{ fontSize: "clamp(40px, 6.5vw, 88px)", lineHeight: 0.95, color: "#F1F1F1", letterSpacing: "-0.04em" }}
+          >
+            Don't Rent Your Career.
+          </AnimatedText>
+          <AnimatedText
+            as="h1"
+            splitWords
+            delay={0.25}
+            className="font-black tracking-tighter"
+            style={{ fontSize: "clamp(40px, 6.5vw, 88px)", lineHeight: 0.95, color: "rgba(241,241,241,0.4)", fontWeight: 300, letterSpacing: "-0.04em" }}
+          >
+            Own It.
+          </AnimatedText>
         </div>
       </section>
 

@@ -85,7 +85,7 @@ export default function Properties() {
           />
           <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(21,23,23,0.95) 0%, rgba(21,23,23,0.15) 60%, transparent 100%)" }} />
         </AnimatedImage>
-        <div className="relative z-10 orbito-container pb-20 w-full">
+        <div className="relative z-10 orbito-container pb-12 sm:pb-20 w-full">
           <AnimatedText className="text-xs tracking-[0.25em] uppercase font-medium block mb-5" as="span" style={{ color: "rgba(241,241,241,0.4)" }}>
             Property
           </AnimatedText>

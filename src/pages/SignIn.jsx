@@ -35,9 +35,9 @@ export default function SignIn() {
   };
 
   return (
-    <div style={{ background: "#F1F1F1", minHeight: "100vh", display: "flex", alignItems: "center", paddingTop: "clamp(100px, 12vw, 140px)", paddingBottom: "5rem" }}>
+    <div className="flex items-start lg:items-center" style={{ background: "#F1F1F1", minHeight: "100vh", paddingTop: "clamp(100px, 12vw, 140px)", paddingBottom: "5rem" }}>
       <div className="orbito-container w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-16 items-start lg:items-center">
           <div>
             <AnimatedText as="span" className="text-xs tracking-[0.25em] uppercase font-medium block mb-5" style={{ color: "#B3B3B3" }}>
               Welcome back

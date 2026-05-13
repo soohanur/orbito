@@ -166,8 +166,8 @@ function ForAgentsSection() {
                     fontStyle: "normal",
                     fontWeight: 500,
                     color: "rgb(0, 0, 0)",
-                    fontSize: "clamp(48px, 5.5vw, 72px)",
-                    lineHeight: "83px",
+                    fontSize: "clamp(36px, 5.5vw, 72px)",
+                    lineHeight: 1.1,
                     letterSpacing: "-0.04em",
                     marginBottom: "2.5rem"
                   }}>

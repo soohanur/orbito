@@ -52,7 +52,7 @@ export default function Agents() {
             as="h1"
             splitWords
             className="font-black tracking-tighter"
-            style={{ fontSize: "clamp(64px, 10vw, 140px)", lineHeight: 0.9, color: "#151717", letterSpacing: "-0.05em" }}
+            style={{ fontSize: "clamp(48px, 10vw, 140px)", lineHeight: 0.9, color: "#151717", letterSpacing: "-0.05em" }}
           >
             Meet Our Agents.
           </AnimatedText>
