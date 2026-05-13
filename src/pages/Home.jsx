@@ -140,14 +140,14 @@ function ForAgentsSection() {
   return (
     <section style={{ background: "#F1F1F1", paddingTop: "clamp(3rem, 9vw, 7rem)", paddingBottom: "clamp(3rem, 9vw, 7rem)", borderTop: "1px solid rgba(21,23,23,0.08)" }}>
       <div className="orbito-container">
-        <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-stretch">
+        <div className="grid md:grid-cols-2 gap-4 md:gap-20 items-stretch">
           {/* Left — images grid (agents side) */}
           <AnimatedElement delay={100}>
-            <div className="grid grid-cols-2 gap-4 h-full" style={{ minHeight: "540px" }}>
+            <div className="grid grid-cols-2 gap-3 sm:gap-4 h-full md:min-h-[540px]">
               <div className="overflow-hidden" style={{ borderRadius: "1rem", aspectRatio: "3/4" }}>
                 <img src="/about3.webp" alt="" className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-700" />
               </div>
-              <div className="overflow-hidden mt-10" style={{ borderRadius: "1rem", aspectRatio: "3/4" }}>
+              <div className="overflow-hidden mt-4 sm:mt-10" style={{ borderRadius: "1rem", aspectRatio: "3/4" }}>
                 <img src="/about4.jpeg" alt="" className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-700" />
               </div>
             </div>
