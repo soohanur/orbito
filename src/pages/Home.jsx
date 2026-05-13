@@ -145,10 +145,10 @@ function ForAgentsSection() {
           <AnimatedElement delay={100}>
             <div className="grid grid-cols-2 gap-4 h-full" style={{ minHeight: "540px" }}>
               <div className="overflow-hidden" style={{ borderRadius: "1rem", aspectRatio: "3/4" }}>
-                <img src="/images/photo-1600880292203-757bb62b4baf-6f2327881272.jpg" alt="" className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-700" />
+                <img src="/about3.webp" alt="" className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-700" />
               </div>
               <div className="overflow-hidden mt-10" style={{ borderRadius: "1rem", aspectRatio: "3/4" }}>
-                <img src="/images/photo-1521737711867-e3b97375f902-bc0105f83be0.jpg" alt="" className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-700" />
+                <img src="/about4.jpeg" alt="" className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-700" />
               </div>
             </div>
           </AnimatedElement>
