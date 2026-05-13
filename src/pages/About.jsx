@@ -63,7 +63,7 @@ export default function About() {
         <div className="orbito-container mb-24">
           <div className="w-full overflow-hidden" style={{ borderRadius: "1.5rem", maxHeight: "560px" }}>
             <img
-              src="https://media.base44.com/images/public/6a031b2b649f3814456c1a02/1a5af2fdf_findrealestate_com_4ea5fa732_adb89c24.jpg"
+              src="/houses.jpg"
               alt="Orbito"
               className="w-full object-cover hover:scale-105 transition-transform duration-[18s] ease-out"
               style={{ objectPosition: "center", height: "560px" }}
