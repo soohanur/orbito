@@ -16,6 +16,8 @@ import About from './pages/About';
 import Buy from './pages/Buy';
 import Sell from './pages/Sell';
 import Rent from './pages/Rent';
+import Blog from './pages/Blog';
+import BlogDetail from './pages/BlogDetail';
 import SignIn from './pages/SignIn';
 import Register from './pages/Register';
 import Profile from './pages/Profile';
@@ -57,6 +59,8 @@ const AuthenticatedApp = () => {
         <Route path="/Buy" element={<Buy />} />
         <Route path="/Sell" element={<Sell />} />
         <Route path="/Rent" element={<Rent />} />
+        <Route path="/Blog" element={<Blog />} />
+        <Route path="/Blog/:slug" element={<BlogDetail />} />
         <Route path="/SignIn" element={<SignIn />} />
         <Route path="/Register" element={<Register />} />
         <Route path="/Profile" element={<Profile />} />

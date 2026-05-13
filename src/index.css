@@ -136,6 +136,10 @@ html.js-anim h6:not(.anim-text):not(.anim-text-words) {
   transform: translateY(20px);
   will-change: transform, opacity;
 }
+html.js-anim p:not(.anim-text):not(.anim-text-words):not(.no-anim) {
+  opacity: 0;
+  will-change: opacity;
+}
 
 /* Explicit wrappers (used for hero word-stagger) */
 .anim-text {
@@ -166,6 +170,7 @@ html.js-anim h6:not(.anim-text):not(.anim-text-words) {
   html.js-anim h4,
   html.js-anim h5,
   html.js-anim h6,
+  html.js-anim p,
   .anim-text,
   .anim-word,
   .anim-img {

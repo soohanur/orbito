@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import AnimatedText from "@/components/AnimatedText";
 import AnimatedImage from "@/components/AnimatedImage";
+import { blogPosts } from "@/lib/blogData";
 import { ArrowRight, Quote } from "lucide-react";
 import { Link } from "react-router-dom";
 import { base44 } from "@/api/base44Client";
@@ -450,10 +451,13 @@ function BlogSection() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const staticFallback = [
-  { date: "2026-04-13", title: "Q1 2026 NYC Market Report", excerpt: "Q1 2026 saw strong rental demand, active sales, and shifting pricing across NYC. Here's what it means heading into the spring market.", image_url: "/images/55592eadd-fresh-boot-3c0a0dc212-57f5c969e787.png" },
-  { date: "2026-04-01", title: "Philly Real Estate: A Winter Chill or a Spring Opportunity?", excerpt: "Record-low listings and steady price growth define a unique February for the Philadelphia Metro.", image_url: "/images/28dd61f46-fresh-boot-3c0a0dc212-c7c31e4dccc3.jpg" },
-  { date: "2026-03-09", title: "What $1M Buys in Different NYC Neighborhoods", excerpt: "Curious what $1M can still buy in today's NYC market? Explore a snapshot of available listings across Manhattan.", image_url: "/images/d2176ce77-fresh-boot-3c0a0dc212-be1949c06cb7.jpg" }];
+  const staticFallback = blogPosts.slice(0, 3).map((p) => ({
+    slug: p.slug,
+    date: p.date,
+    title: p.title,
+    excerpt: p.excerpt,
+    image_url: p.image,
+  }));
 
 
   useEffect(() => {
@@ -479,34 +483,37 @@ function BlogSection() {
               <p className="text-lg font-light leading-relaxed" style={{ color: "#383A3A" }}>
                 See how we've helped clients achieve their real estate dreams, one successful move at a time.
               </p>
-              <button
-                className="group inline-flex items-center gap-3 rounded-full text-sm font-semibold tracking-widest uppercase transition-all duration-400 hover:-translate-y-0.5 hover:shadow-lg px-8 py-4"
-                style={{ background: "#151717", color: "#F1F1F1" }}>
-                
-                Visit Our Blog <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </button>
+              <Link to="/Blog">
+                <button
+                  className="group inline-flex items-center gap-3 rounded-full text-sm font-semibold tracking-widest uppercase transition-all duration-400 hover:-translate-y-0.5 hover:shadow-lg px-8 py-4"
+                  style={{ background: "#151717", color: "#F1F1F1" }}>
+                  Visit Our Blog <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                </button>
+              </Link>
             </div>
           </AnimatedElement>
         </div>
 
         <div className={`transition-opacity duration-500 ${loading ? "opacity-30" : "opacity-100"}`}>
           {items.map((post, i) =>
-          <AnimatedElement key={i} delay={i * 80}>
-              <div className="group grid md:grid-cols-[1.5fr_1fr] gap-10 md:gap-20 py-14 items-center" style={{ borderBottom: "1px solid rgba(21,23,23,0.1)" }}>
-                <div className="order-2 md:order-1 flex flex-col justify-center">
-                  <span className="text-xs tracking-widest font-bold block mb-5 pl-3" style={{ borderLeft: "2px solid #151717", color: "#151717" }}>{post.date}</span>
-                  <h3 className="font-bold text-3xl sm:text-4xl mb-5 leading-tight tracking-tight group-hover:opacity-70 transition-opacity" style={{ color: "#151717" }}>{post.title}</h3>
-                  <p className="leading-relaxed text-lg font-light mb-8 max-w-xl" style={{ color: "#383A3A" }}>{post.excerpt}</p>
-                  <button className="group/btn inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase transition-colors px-4 py-1.5 rounded-full" style={{ border: "1px solid rgba(21,23,23,0.3)", color: "#151717" }}>
-                    Read More <ArrowRight className="h-3 w-3 group-hover/btn:translate-x-1 transition-transform" />
-                  </button>
-                </div>
-                <div className="order-1 md:order-2">
-                  <div className="overflow-hidden" style={{ borderRadius: "1rem", aspectRatio: "16/9" }}>
-                    <img src={post.image_url} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[10s]" />
+          <AnimatedElement key={post.slug || i} delay={i * 80}>
+              <Link to={post.slug ? `/Blog/${post.slug}` : "/Blog"} className="block">
+                <div className="group grid md:grid-cols-[1.5fr_1fr] gap-10 md:gap-20 py-14 items-center" style={{ borderBottom: "1px solid rgba(21,23,23,0.1)" }}>
+                  <div className="order-2 md:order-1 flex flex-col justify-center">
+                    <span className="text-xs tracking-widest font-bold block mb-5 pl-3" style={{ borderLeft: "2px solid #151717", color: "#151717" }}>{post.date}</span>
+                    <h3 className="font-bold text-3xl sm:text-4xl mb-5 leading-tight tracking-tight group-hover:opacity-70 transition-opacity" style={{ color: "#151717" }}>{post.title}</h3>
+                    <p className="leading-relaxed text-lg font-light mb-8 max-w-xl" style={{ color: "#383A3A" }}>{post.excerpt}</p>
+                    <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase transition-colors px-4 py-1.5 rounded-full w-fit" style={{ border: "1px solid rgba(21,23,23,0.3)", color: "#151717" }}>
+                      Read More <ArrowRight className="h-3 w-3 group-hover:translate-x-1 transition-transform" />
+                    </span>
+                  </div>
+                  <div className="order-1 md:order-2">
+                    <div className="overflow-hidden" style={{ borderRadius: "1rem", aspectRatio: "16/9" }}>
+                      <img src={post.image_url} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[10s]" />
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             </AnimatedElement>
           )}
         </div>

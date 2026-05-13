@@ -30,10 +30,30 @@ const animateHeading = (el) => {
   );
 };
 
+const animateParagraph = (el) => {
+  if (el.dataset.animDone) return;
+  if (el.classList.contains("no-anim") || el.closest(SKIP_SEL)) {
+    el.dataset.animDone = "skip";
+    return;
+  }
+  el.dataset.animDone = "1";
+  gsap.fromTo(
+    el,
+    { opacity: 0 },
+    {
+      opacity: 1,
+      duration: 0.55,
+      ease: "power1.out",
+      scrollTrigger: { trigger: el, start: "top 92%", once: true },
+    }
+  );
+};
+
 const scan = () => {
   document
     .querySelectorAll("h1, h2, h3, h4, h5, h6")
     .forEach(animateHeading);
+  document.querySelectorAll("p").forEach(animateParagraph);
 };
 
 export function useGlobalReveal() {
