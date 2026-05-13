@@ -34,8 +34,8 @@ export default function SignIn() {
   };
 
   return (
-    <div style={{ background: "#F1F1F1", paddingTop: "clamp(100px, 12vw, 140px)", paddingBottom: "5rem" }}>
-      <div className="orbito-container">
+    <div style={{ background: "#F1F1F1", minHeight: "100vh", display: "flex", alignItems: "center", paddingTop: "clamp(100px, 12vw, 140px)", paddingBottom: "5rem" }}>
+      <div className="orbito-container w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
             <span className="text-xs tracking-[0.25em] uppercase font-medium block mb-5" style={{ color: "#B3B3B3" }}>
