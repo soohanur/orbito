@@ -152,31 +152,17 @@ export default function Header() {
                   )}
                 </div>
               ) : (
-                <>
-                  <Link to="/Register">
-                    <button
-                      className="text-sm font-semibold tracking-widest uppercase px-6 py-2.5 rounded-full transition-all duration-300"
-                      style={{
-                        background: "transparent",
-                        border: `1px solid ${isTransparent ? "rgba(241,241,241,0.6)" : "#151717"}`,
-                        color: isTransparent ? "#F1F1F1" : "#151717",
-                      }}
-                    >
-                      Register
-                    </button>
-                  </Link>
-                  <Link to="/SignIn">
-                    <button
-                      className="text-sm font-semibold tracking-widest uppercase px-7 py-2.5 rounded-full transition-all duration-300"
-                      style={{
-                        background: isTransparent ? "#F1F1F1" : "#151717",
-                        color: isTransparent ? "#151717" : "#F1F1F1",
-                      }}
-                    >
-                      Sign In
-                    </button>
-                  </Link>
-                </>
+                <Link to="/SignIn">
+                  <button
+                    className="text-sm font-semibold tracking-widest uppercase px-7 py-2.5 rounded-full transition-all duration-300"
+                    style={{
+                      background: isTransparent ? "#F1F1F1" : "#151717",
+                      color: isTransparent ? "#151717" : "#F1F1F1",
+                    }}
+                  >
+                    Sign In
+                  </button>
+                </Link>
               )}
             </div>
 
@@ -222,21 +208,12 @@ export default function Header() {
                 </button>
               </>
             ) : (
-              <>
-                <Link
-                  to="/SignIn"
-                  className="mt-10 w-full inline-flex items-center justify-center bg-[#151717] text-[#F1F1F1] py-4 rounded-full text-base font-semibold tracking-widest uppercase"
-                >
-                  Sign In
-                </Link>
-                <Link
-                  to="/Register"
-                  className="mt-3 w-full inline-flex items-center justify-center py-4 rounded-full text-base font-semibold tracking-widest uppercase"
-                  style={{ border: "1px solid rgba(21,23,23,0.2)", color: "#151717" }}
-                >
-                  Register
-                </Link>
-              </>
+              <Link
+                to="/SignIn"
+                className="mt-10 w-full inline-flex items-center justify-center bg-[#151717] text-[#F1F1F1] py-4 rounded-full text-base font-semibold tracking-widest uppercase"
+              >
+                Sign In
+              </Link>
             )}
           </nav>
         </div>
