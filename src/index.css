@@ -124,13 +124,31 @@ body {
 }
 
 /* ─── GSAP reveal initial states (no FOUC) ─── */
+/* Sitewide auto-reveal: every h1-h6 + every img starts hidden until GSAP runs */
+html.js-anim h1,
+html.js-anim h2,
+html.js-anim h3,
+html.js-anim h4,
+html.js-anim h5,
+html.js-anim h6 {
+  opacity: 0;
+  transform: translateY(20px);
+  will-change: transform, opacity;
+}
+html.js-anim img {
+  opacity: 0;
+  transform: scale(1.02);
+  will-change: transform, opacity;
+}
+
+/* Explicit wrappers (used for hero word-stagger) */
 .anim-text {
   opacity: 0;
   transform: translateY(20px);
   will-change: transform, opacity;
 }
 .anim-text-words {
-  /* container itself stays visible; child .anim-word elements carry the hidden state */
+  /* container stays visible; child .anim-word elements carry the hidden state */
   opacity: 1;
 }
 .anim-word {
@@ -146,6 +164,13 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html.js-anim h1,
+  html.js-anim h2,
+  html.js-anim h3,
+  html.js-anim h4,
+  html.js-anim h5,
+  html.js-anim h6,
+  html.js-anim img,
   .anim-text,
   .anim-word,
   .anim-img {
