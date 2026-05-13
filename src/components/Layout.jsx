@@ -2,11 +2,9 @@ import { Outlet } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 import { useSmoothScroll } from "@/lib/useSmoothScroll";
-import { useGlobalReveal } from "@/lib/useGlobalReveal";
 
 export default function Layout() {
   useSmoothScroll();
-  useGlobalReveal();
   return (
     <div className="bg-background text-foreground min-h-screen">
       <Header />
