@@ -123,7 +123,7 @@ export default function Join() {
               </div>
               <div className="overflow-hidden" style={{ borderRadius: "0.75rem" }}>
                 <img
-                  src="/images/d137d1f02-findrealestate-com-241-09c99d11525f.jpg"
+                  src="/join%20page.jpeg"
                   alt=""
                   className="w-full object-cover hover:scale-[1.02] transition-transform duration-700"
                   style={{ aspectRatio: "4/3" }}
