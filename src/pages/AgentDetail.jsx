@@ -7,6 +7,7 @@ import {
 } from "lucide-react";
 import { findAgentBySlug, agents, agentSlug, badgeColors } from "@/lib/agentsData";
 import { propertyListings, propertySlug, tagColors } from "@/lib/propertiesData";
+import AnimatedText from "@/components/AnimatedText";
 
 export default function AgentDetail() {
   const { slug } = useParams();
@@ -84,13 +85,18 @@ export default function AgentDetail() {
             </motion.div>
 
             <div className="lg:col-span-3">
-              <span className="text-xs tracking-[0.25em] uppercase font-medium block mb-3" style={{ color: "#B3B3B3" }}>
+              <AnimatedText as="span" className="text-xs tracking-[0.25em] uppercase font-medium block mb-3" style={{ color: "#B3B3B3" }}>
                 {agent.title}
-              </span>
-              <h1 className="font-black tracking-tighter mb-3"
-                style={{ fontSize: "clamp(44px, 6vw, 84px)", lineHeight: 0.92, color: "#151717", letterSpacing: "-0.04em" }}>
+              </AnimatedText>
+              <AnimatedText
+                as="h1"
+                splitWords
+                delay={0.1}
+                className="font-black tracking-tighter mb-3"
+                style={{ fontSize: "clamp(44px, 6vw, 84px)", lineHeight: 0.92, color: "#151717", letterSpacing: "-0.04em" }}
+              >
                 {agent.name}
-              </h1>
+              </AnimatedText>
               <p className="flex items-center gap-2 text-sm mb-8" style={{ color: "#383A3A" }}>
                 <MapPin className="h-4 w-4" /> {agent.location}
               </p>

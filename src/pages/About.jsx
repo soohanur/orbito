@@ -2,6 +2,7 @@ import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import AnimatedText from "@/components/AnimatedText";
 
 const AnimatedElement = ({ children, className, delay = 0 }) => {
   const ref = useRef(null);
@@ -46,15 +47,37 @@ export default function About() {
       {/* Hero */}
       <section style={{ paddingTop: "9rem", paddingBottom: "6rem" }}>
         <div className="orbito-container">
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9 }}>
-            <span className="text-xs tracking-[0.22em] uppercase font-bold block mb-6" style={{ color: "#B3B3B3" }}>About Orbito</span>
-            <h1 className="font-black tracking-tighter mb-8" style={{ fontSize: "clamp(52px, 8vw, 110px)", lineHeight: 0.93, color: "#151717", letterSpacing: "-0.05em", maxWidth: "900px" }}>
-              Real Estate,<br /><span style={{ color: "#B3B3B3", fontWeight: 300 }}>Rewired.</span>
-            </h1>
-            <p className="font-light leading-relaxed" style={{ fontSize: "clamp(18px, 2vw, 26px)", color: "#383A3A", maxWidth: "680px" }}>
+          <div>
+            <AnimatedText as="span" className="text-xs tracking-[0.22em] uppercase font-bold block mb-6" style={{ color: "#B3B3B3" }}>
+              About Orbito
+            </AnimatedText>
+            <AnimatedText
+              as="h1"
+              splitWords
+              delay={0.05}
+              className="font-black tracking-tighter mb-2"
+              style={{ fontSize: "clamp(52px, 8vw, 110px)", lineHeight: 0.93, color: "#151717", letterSpacing: "-0.05em", maxWidth: "900px" }}
+            >
+              Real Estate,
+            </AnimatedText>
+            <AnimatedText
+              as="h1"
+              splitWords
+              delay={0.25}
+              className="font-black tracking-tighter mb-8"
+              style={{ fontSize: "clamp(52px, 8vw, 110px)", lineHeight: 0.93, color: "#B3B3B3", fontWeight: 300, letterSpacing: "-0.05em", maxWidth: "900px" }}
+            >
+              Rewired.
+            </AnimatedText>
+            <AnimatedText
+              as="p"
+              delay={0.4}
+              className="font-light leading-relaxed"
+              style={{ fontSize: "clamp(18px, 2vw, 26px)", color: "#383A3A", maxWidth: "680px" }}
+            >
               Orbito is a premier real estate brokerage headquartered in New York City, with offices in Philadelphia. We specialize in buying, selling, and renting residential and commercial properties — guided by a belief that every move matters.
-            </p>
-          </motion.div>
+            </AnimatedText>
+          </div>
         </div>
       </section>
 

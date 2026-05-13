@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import AnimatedText from "@/components/AnimatedText";
 import { ArrowRight, Heart, LogOut, Mail, MapPin, Pencil, Phone, Save, X } from "lucide-react";
 import { useClientAuth } from "@/lib/ClientAuth";
 import { findPropertyBySlug, propertySlug, tagColors } from "@/lib/propertiesData";
@@ -45,15 +46,29 @@ export default function Profile() {
   return (
     <div style={{ background: "#F1F1F1", paddingTop: "clamp(100px, 12vw, 140px)", paddingBottom: "5rem" }}>
       <div className="orbito-container">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-          <span className="text-xs tracking-[0.25em] uppercase font-medium block mb-3" style={{ color: "#B3B3B3" }}>
+        <div>
+          <AnimatedText as="span" className="text-xs tracking-[0.25em] uppercase font-medium block mb-3" style={{ color: "#B3B3B3" }}>
             Your account
-          </span>
-          <h1 className="font-black tracking-tighter mb-10"
-            style={{ fontSize: "clamp(48px, 7vw, 96px)", lineHeight: 0.92, color: "#151717", letterSpacing: "-0.04em" }}>
-            Hello, <span style={{ color: "#B3B3B3", fontWeight: 300 }}>{user.name.split(" ")[0]}.</span>
-          </h1>
-        </motion.div>
+          </AnimatedText>
+          <AnimatedText
+            as="h1"
+            splitWords
+            delay={0.05}
+            className="font-black tracking-tighter inline-block"
+            style={{ fontSize: "clamp(48px, 7vw, 96px)", lineHeight: 0.92, color: "#151717", letterSpacing: "-0.04em" }}
+          >
+            Hello,
+          </AnimatedText>
+          <AnimatedText
+            as="h1"
+            splitWords
+            delay={0.2}
+            className="font-black tracking-tighter mb-10 inline-block ml-3"
+            style={{ fontSize: "clamp(48px, 7vw, 96px)", lineHeight: 0.92, color: "#B3B3B3", fontWeight: 300, letterSpacing: "-0.04em" }}
+          >
+            {`${user.name.split(" ")[0]}.`}
+          </AnimatedText>
+        </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Profile card */}

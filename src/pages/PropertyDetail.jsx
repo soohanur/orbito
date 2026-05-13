@@ -10,6 +10,7 @@ import {
 } from "@/lib/propertiesData";
 import { agents, agentSlug } from "@/lib/agentsData";
 import { useClientAuth } from "@/lib/ClientAuth";
+import AnimatedText from "@/components/AnimatedText";
 
 export default function PropertyDetail() {
   const { slug } = useParams();
@@ -138,13 +139,18 @@ export default function PropertyDetail() {
         <div className="orbito-container">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             <div className="lg:col-span-2">
-              <span className="text-xs tracking-[0.25em] uppercase font-medium block mb-3" style={{ color: "#B3B3B3" }}>
+              <AnimatedText as="span" className="text-xs tracking-[0.25em] uppercase font-medium block mb-3" style={{ color: "#B3B3B3" }}>
                 {property.city}
-              </span>
-              <h1 className="font-black tracking-tighter mb-2"
-                style={{ fontSize: "clamp(40px, 5vw, 72px)", lineHeight: 0.95, color: "#151717", letterSpacing: "-0.04em" }}>
+              </AnimatedText>
+              <AnimatedText
+                as="h1"
+                splitWords
+                delay={0.1}
+                className="font-black tracking-tighter mb-2"
+                style={{ fontSize: "clamp(40px, 5vw, 72px)", lineHeight: 0.95, color: "#151717", letterSpacing: "-0.04em" }}
+              >
                 {property.neighborhood}
-              </h1>
+              </AnimatedText>
               <p className="flex items-center gap-2 text-sm mb-8" style={{ color: "#383A3A" }}>
                 <MapPin className="h-4 w-4" /> {property.address}, {property.city}
               </p>
