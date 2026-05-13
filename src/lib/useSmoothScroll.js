@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { setLenis } from "@/lib/scrollManager";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -30,12 +31,15 @@ export function useSmoothScroll() {
       raf = (time) => lenis.raf(time * 1000);
       gsap.ticker.add(raf);
       gsap.ticker.lagSmoothing(0);
+
+      setLenis(lenis);
     });
 
     return () => {
       cancelled = true;
       if (raf) gsap.ticker.remove(raf);
       if (lenis) lenis.destroy();
+      setLenis(null);
     };
   }, []);
 }
