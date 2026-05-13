@@ -36,7 +36,7 @@ Claude (Anthropic) was used to convert the raw concept into an actionable build 
 - Identified the data model (properties, agents, users, favorites)
 - Decided routing structure (`/Properties`, `/Properties/:slug`, `/Agents`, `/Agents/:slug`, `/SignIn`, `/Register`, `/Profile`)
 - Specified the design language (typography scale, brand tokens `#151717` / `#F1F1F1` / `#383A3A` / `#B3B3B3`, container system, motion principles)
-- Chose the tech stack: **React + Vite + Tailwind + Framer Motion + React Router**
+- Chose the tech stack: **React + Vite + Tailwind + Framer Motion + GSAP/ScrollTrigger + Lenis + React Router**
 - Pre-empted edge cases: anonymous favorites, signed-in favorites, route fallbacks, mobile nav drawer
 
 This phase answered: *"How exactly do we build this, in what order, with what trade-offs?"*
@@ -82,7 +82,7 @@ This phase answered: *"How do we go from 'looks like a real site' to 'is a real 
 | `/About` | Brand story |
 | Header | Theme-aware (transparent on home, blurred on scroll); avatar dropdown for signed-in users |
 
-Every page uses the same brand tokens (`#151717` / `#F1F1F1` / `#383A3A` / `#B3B3B3`), the same `orbito-container` width system, the same typography rhythm, and the same motion grammar (Framer Motion entry animations, IntersectionObserver scroll reveals).
+Every page uses the same brand tokens (`#151717` / `#F1F1F1` / `#383A3A` / `#B3B3B3`), the same `orbito-container` width system, the same typography rhythm, and the same motion grammar — Framer Motion entry animations on heroes plus a single sitewide GSAP `ScrollTrigger` layer that fades every `h1`–`h6` and `<p>` into view as it enters the viewport (hero titles use a word-stagger via the shared `<AnimatedText>` component). Lenis drives inertia smooth scroll page-wide, synced to GSAP's ticker.
 
 ---
 
@@ -107,7 +107,16 @@ If you can do this across one codebase, you can do it across any codebase. **The
 - **React 18** + **Vite** — modern, fast, hot-reload dev loop
 - **Tailwind CSS** + custom brand tokens — utility-first styling discipline
 - **React Router v6** — SPA routing with dynamic slug routes
-- **Framer Motion** — entrance animations
+- **Framer Motion** — entrance animations on heroes and CTAs
+- **GSAP + ScrollTrigger** — sitewide scroll-triggered reveals
+  for every `h1`–`h6` and `<p>`, hero word-stagger via a single
+  reusable `<AnimatedText>` component (no per-element rewrites),
+  image fade-in via `<AnimatedImage>`. Respects
+  `prefers-reduced-motion`.
+- **Lenis** — page-wide inertia smooth scroll, code-split and lazy
+  loaded, synced to GSAP's ticker so ScrollTrigger updates stay in
+  lock-step with the smooth scroll engine. Smooth-touch disabled
+  so mobile keeps native momentum.
 - **Lucide React** — consistent icon system
 - **localStorage** — zero-backend auth + favorites for the demo
 - **Base44 SDK** — initial scaffold (still wired for forward compatibility)
