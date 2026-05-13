@@ -22,7 +22,20 @@ export const AuthProvider = ({ children }) => {
     try {
       setIsLoadingPublicSettings(true);
       setAuthError(null);
-      
+
+      // Production builds without a base44 backend (e.g. static Hostinger
+      // hosting using only the local ClientAuth login) have no app id and
+      // no /api/apps endpoint. Skip the network call entirely so we never
+      // hang on a missing backend or get redirected to a base44 login URL.
+      if (!appParams.appId) {
+        setAppPublicSettings(null);
+        setIsAuthenticated(false);
+        setAuthChecked(true);
+        setIsLoadingPublicSettings(false);
+        setIsLoadingAuth(false);
+        return;
+      }
+
       // First, check app public settings (with token if available)
       // This will tell us if auth is required, user not registered, etc.
       const appClient = createAxiosClient({
