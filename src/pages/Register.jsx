@@ -34,7 +34,7 @@ export default function Register() {
   };
 
   return (
-    <div style={{ background: "#F1F1F1", minHeight: "100vh", paddingTop: "clamp(100px, 12vw, 140px)", paddingBottom: "5rem" }}>
+    <div style={{ background: "#F1F1F1", paddingTop: "clamp(100px, 12vw, 140px)", paddingBottom: "5rem" }}>
       <div className="orbito-container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>

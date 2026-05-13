@@ -153,17 +153,25 @@ export default function Header() {
                 </div>
               ) : (
                 <>
-                  <Link
-                    to="/Register"
-                    className="text-sm font-semibold tracking-wide transition-colors"
-                    style={{ color: "#383A3A" }}
-                  >
-                    Register
+                  <Link to="/Register">
+                    <button
+                      className="text-sm font-semibold tracking-widest uppercase px-6 py-2.5 rounded-full transition-all duration-300"
+                      style={{
+                        background: "transparent",
+                        border: `1px solid ${isTransparent ? "rgba(241,241,241,0.6)" : "#151717"}`,
+                        color: isTransparent ? "#F1F1F1" : "#151717",
+                      }}
+                    >
+                      Register
+                    </button>
                   </Link>
                   <Link to="/SignIn">
                     <button
                       className="text-sm font-semibold tracking-widest uppercase px-7 py-2.5 rounded-full transition-all duration-300"
-                      style={{ background: "#151717", color: "#F1F1F1" }}
+                      style={{
+                        background: isTransparent ? "#F1F1F1" : "#151717",
+                        color: isTransparent ? "#151717" : "#F1F1F1",
+                      }}
                     >
                       Sign In
                     </button>

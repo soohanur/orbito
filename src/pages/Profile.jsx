@@ -43,7 +43,7 @@ export default function Profile() {
   };
 
   return (
-    <div style={{ background: "#F1F1F1", minHeight: "100vh", paddingTop: "clamp(100px, 12vw, 140px)", paddingBottom: "5rem" }}>
+    <div style={{ background: "#F1F1F1", paddingTop: "clamp(100px, 12vw, 140px)", paddingBottom: "5rem" }}>
       <div className="orbito-container">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
           <span className="text-xs tracking-[0.25em] uppercase font-medium block mb-3" style={{ color: "#B3B3B3" }}>
