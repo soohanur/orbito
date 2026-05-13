@@ -140,10 +140,10 @@ export default function About() {
         <div className="orbito-container mb-24">
           <div className="grid sm:grid-cols-2 gap-5">
             <div className="overflow-hidden" style={{ borderRadius: "1rem", aspectRatio: "4/3" }}>
-              <img src="/images/9353267dd-findrealestate-com-1e7-404ac71727e7.jpg" alt="" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+              <img src="/about3.webp" alt="" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
             </div>
             <div className="overflow-hidden" style={{ borderRadius: "1rem", aspectRatio: "4/3" }}>
-              <img src="/images/b775be0a6-findrealestate-com-348-34a4946637e9.jpg" alt="" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+              <img src="/about4.jpeg" alt="" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
             </div>
           </div>
         </div>
