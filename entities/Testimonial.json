@@ -1,0 +1,16 @@
+{
+  "type": "object",
+  "properties": {
+    "quote": {
+      "type": "string"
+    },
+    "author": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    }
+  },
+  "required": [],
+  "name": "Testimonial"
+}
