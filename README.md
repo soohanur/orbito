@@ -1,129 +1,156 @@
-# Orbito — A Real Estate Platform Built Entirely With AI
+# Orbito
 
-> **100% AI-assembled.** Concept, copy, design, code, and review — every layer was driven by AI tools, orchestrated end-to-end by a single operator who specializes in turning AI fluency into shippable product.
+A real estate site built end to end with AI. No designer, no copywriter, no second engineer.
 
-Live demo: `npm install && npm run dev` → http://localhost:5173
-
----
-
-## Why this project exists
-
-Orbito is a proof-of-capability. It demonstrates that a modern, polished, production-grade web product — with authentication, routing, dynamic detail pages, search, filtering, favorites, agent profiles, and a coherent design system — can be **planned, designed, built, and refined entirely through AI tooling**, without a traditional design team, without hand-written boilerplate, and without copy-pasting from templates.
-
-It is built specifically as a portfolio piece for AI-native builders: people who treat large language models not as autocomplete but as **collaborators across the full software lifecycle**.
-
-If you are reading this thinking "I could never build a site like this without a team" — that's exactly the point. With the right AI stack and the right operating model, **one person can.**
+Live demo: `npm install && npm run dev` then open http://localhost:5173
 
 ---
 
-## The AI Stack — every tool, every role
+## What it is
 
-This site was assembled by chaining four AI tools, each playing a specific role. Nothing was outsourced to a human designer, copywriter, or engineer.
+A multi page React site for a fictional NYC and Philly brokerage. Properties, agents, blog, buy/sell/rent landings, profile with saved homes, login, register. Everything you would expect from a real brokerage marketing site.
 
-### 1. **ChatGPT — Ideation & Concept**
-ChatGPT was used at the very front of the pipeline to:
-- Brainstorm the product category (luxury-tier real estate marketplace)
-- Define the target audience (NYC buyers, renters, agents, investors)
-- Generate competitor analyses, value proposition variants, and naming candidates
-- Draft the information architecture: which pages exist, what each page promises, what the user flow looks like
-- Produce the editorial voice — confident, minimal, slightly editorial, no emoji, no fluff
-
-This phase answered: *"What are we building, who is it for, and why would they care?"*
-
-### 2. **Claude — Strategic Planning**
-Claude (Anthropic) was used to convert the raw concept into an actionable build plan:
-- Mapped each user story to specific pages and components
-- Identified the data model (properties, agents, users, favorites)
-- Decided routing structure (`/Properties`, `/Properties/:slug`, `/Agents`, `/Agents/:slug`, `/SignIn`, `/Register`, `/Profile`)
-- Specified the design language (typography scale, brand tokens `#151717` / `#F1F1F1` / `#383A3A` / `#B3B3B3`, container system, motion principles)
-- Chose the tech stack: **React + Vite + Tailwind + Framer Motion + GSAP/ScrollTrigger + Lenis + React Router**
-- Pre-empted edge cases: anonymous favorites, signed-in favorites, route fallbacks, mobile nav drawer
-
-This phase answered: *"How exactly do we build this, in what order, with what trade-offs?"*
-
-### 3. **Base44 — Initial Design & Scaffold**
-Base44 was used to materialize the plan into a working starter:
-- Generated the first pass of layout, theme tokens, base components, and core pages
-- Produced a coherent visual baseline so we never had to "design from a blank page"
-- Wired up routing, the layout shell (`Header`, `Footer`, `Layout`), and reusable UI primitives in `src/components/ui/`
-- Provided the deployment-ready Vite app skeleton
-
-This phase answered: *"What does V0.1 look like, today, running in a browser?"*
-
-### 4. **Claude Code — Refinement, Features & Engineering**
-Claude Code (the agentic CLI variant) is where the project graduated from "AI demo" to "real product." It was used to:
-- **Rename and restructure navigation** — `Search` → `Property` across nav, hero kickers, and mobile drawer
-- **Extract shared data layers** into `src/lib/propertiesData.js` and `src/lib/agentsData.js` so detail pages, related cards, and favorites all reference one source of truth
-- **Build dynamic single-pages for every property** (`/Properties/:slug`) with hero galleries, embedded Google Maps, amenities, sticky sidebar (price + listing agent + tour-request form), and related listings — all matching the global theme
-- **Build dynamic single-pages for every agent** (`/Agents/:slug`) with bio, stats (deals / rating / years / languages), specialty highlights, contact form, featured listings, and other-agents carousel
-- **Fix the missing Shirin Khoury agent image** with a working Unsplash portrait swap, then enrich every agent record with phone, email, bio, years, and languages
-- **Ship a complete client-side authentication system** in `src/lib/ClientAuth.jsx` (localStorage-backed, no backend required for the demo): register, sign-in, sign-out, password validation, session persistence, profile editing (name, phone, location, bio), and per-user saved favorites
-- **Add a full Profile dashboard** at `/Profile` showing avatar, member-since date, editable profile fields, and saved homes synced to the favorites system on the listings pages
-- **Polish the header**: avatar dropdown when logged in, Register + Sign In CTAs when logged out, full mobile drawer parity
-- **Remove cruft**: the "20 Properties Found" counter was deleted to give the listings grid more visual weight
-- **Diagnose and fix tooling issues** end-to-end (the well-known `@rollup/rollup-linux-x64-gnu` npm optional-deps bug was identified and patched without breaking anything else)
-
-This phase answered: *"How do we go from 'looks like a real site' to 'is a real site, with real features that actually work'?"*
+The whole thing was made by chaining four AI tools. The point is to show that one person with the right AI workflow can ship a real product.
 
 ---
 
-## What's actually in the product
+## The AI workflow
 
-| Surface | What it does |
-|---|---|
-| `/` Home | Editorial hero, narrative-driven sections |
-| `/Properties` | Filterable, sortable listings grid (Buy / Rent / Commercial) + search by address, neighborhood, city |
-| `/Properties/:slug` | Per-listing detail page: gallery, stats, description, amenities, map, sticky price + tour-request form, related listings, CTA |
-| `/Agents` | Filterable agent directory with specialty chips and search |
-| `/Agents/:slug` | Per-agent profile: bio, stats, languages, contact form, featured listings, other agents |
-| `/SignIn` & `/Register` | Validated forms, themed end-to-end, password show/hide, error states |
-| `/Profile` | Editable profile, avatar, member-since, saved-homes grid backed by per-user favorites |
-| `/Join` | Career / agent recruitment landing |
-| `/About` | Brand story |
-| Header | Theme-aware (transparent on home, blurred on scroll); avatar dropdown for signed-in users |
+Four tools, four roles. I orchestrated, they specialized.
 
-Every page uses the same brand tokens (`#151717` / `#F1F1F1` / `#383A3A` / `#B3B3B3`), the same `orbito-container` width system, the same typography rhythm, and the same motion grammar — Framer Motion entry animations on heroes plus a single sitewide GSAP `ScrollTrigger` layer that fades every `h1`–`h6` and `<p>` into view as it enters the viewport (hero titles use a word-stagger via the shared `<AnimatedText>` component). Lenis drives inertia smooth scroll page-wide, synced to GSAP's ticker.
+**1. ChatGPT (ideation).** Concept, audience, naming, page list, copy voice.
+
+**2. Claude (planning).** Information architecture, routing, data model, design tokens, tradeoff calls.
+
+**3. Base44 (initial scaffold).** First working pass of layout, theme, base components, routing shell.
+
+**4. Claude Code (engineering).** Everything after that. Single property and agent pages, client side auth with profile and favorites, Buy/Sell/Rent landings, blog, sitewide GSAP scroll animations, Lenis smooth scroll, mobile responsiveness, deploy build.
 
 ---
 
-## The operating model (why this matters)
+## The actual prompts
 
-Most people use AI as a glorified autocomplete. **This project was built by treating each AI tool as a specialist on a team I direct.**
+These are the prompts that drove the build. Each one is written to be specific enough that the tool can deliver, while leaving room for it to make good calls on its own. Copy them, swap the brand, you get a similar result.
 
-- **ChatGPT** is my product strategist.
-- **Claude** is my staff engineer / architect.
-- **Base44** is my design system and scaffolder.
-- **Claude Code** is my senior implementer and refactorer.
-- **I** am the orchestrator — defining intent, sequencing the tools, reviewing every output, integrating across them, and shipping.
+### ChatGPT (concept and copy voice)
 
-The skill is not in writing prompts. The skill is in **knowing which AI to hand which problem to**, in what order, with what context, and how to integrate their outputs into one coherent codebase. That is what an AI-native builder does, and that is what this repo is evidence of.
+> I want to launch a real estate brand called Orbito. Premium feel, NYC and Philadelphia focused, targeting buyers, renters, agents, and investors. Help me think this through.
+>
+> Give me:
+> 1. A short positioning statement (one sentence).
+> 2. The three buyer personas, very specific (income bracket, age, what they care about, where they look today).
+> 3. A site map of every page I need for an MVP launch and what each page promises the visitor.
+> 4. The brand voice in plain rules (do say / do not say) plus three example headlines I can drop on the homepage.
+>
+> Constraints: no emoji, no marketing fluff, no "elevate", no "unlock". The voice should feel like a confident senior agent who does not need to oversell. Keep everything in plain English. If a page does not earn its place in the MVP, cut it.
 
-If you can do this across one codebase, you can do it across any codebase. **The leverage is real.**
+### Base44 (first design pass)
+
+> Build me a static marketing site scaffold for a real estate brand called Orbito. React with Vite, Tailwind, React Router. Mobile responsive.
+>
+> Pages: Home, Properties, Agents, Join, About. Standard shared Header (logo left, nav center, sign in button right) and Footer.
+>
+> Design language:
+> * Editorial and minimal. No gradients, no glassmorphism, no rounded squircle cards.
+> * Brand tokens: background `#F1F1F1`, ink `#151717`, muted ink `#383A3A`, faded `#B3B3B3`.
+> * Typography: tight black display font for headlines (think Inter or Instrument Sans, 800/900 weight), letter spacing negative, line height tight. Body text light weight, generous line height.
+> * Container with very wide max width (around 1920px) and generous left/right padding that shrinks on mobile.
+> * Heroes are big, type led, often with one quiet hero image. Use clamp() for fluid font sizes.
+> * Cards are clean white with a one pixel light border and soft hover lift.
+>
+> Home sections in order: full bleed hero, "Why Orbito" two column statement, For Agents pitch with two stacked images, services row (Buy / Sell / Rent) as full width dark sections with a number and a big label, results stat strip, blog teaser, final CTA.
+>
+> Wire the routes, drop placeholder copy, ship a working starter I can clone and iterate on.
+
+### Claude / Claude Code (engineering and refinement)
+
+> I have a Vite + React + Tailwind scaffold for a real estate site called Orbito. I need you to turn it into a real product. Read the existing code first before you change anything.
+>
+> Work in this order and check in after each block:
+>
+> 1. Extract property and agent data into `src/lib/propertiesData.js` and `src/lib/agentsData.js` (single source of truth, no duplicate arrays). Each property has type, price, beds, baths, area, address, neighborhood, city, image, tag, featured, daysOnMarket. Each agent has name, title, location, deals, rating, specialty, image, badge, phone, email, bio, years, languages.
+>
+> 2. Build dynamic single pages for every property at `/Properties/:slug` and every agent at `/Agents/:slug`. Properties detail needs gallery, stats row, description, amenities list, embedded Google Map iframe, sticky sidebar (price + listing agent + tour request form), related listings, dark CTA. Agent detail needs hero image, stats, contact form, listings carousel, other agents row. Match the existing theme exactly. No new tokens, no new colors.
+>
+> 3. Ship client side auth using localStorage in `src/lib/ClientAuth.jsx`. Register, sign in, sign out, edit profile, per user favorites. No backend, no JWT, no third party. The header avatar dropdown swaps in when the user is logged in. Wire `/SignIn`, `/Register`, `/Profile`.
+>
+> 4. Add three service landing pages, `/Buy`, `/Sell`, `/Rent`. Share one `ServiceLanding` component, parameterize copy, hero image, benefits, steps, FAQs, and listing filter. Link them from the Home services rows.
+>
+> 5. Add `/Blog` and `/Blog/:slug`. Six seeded posts in `src/lib/blogData.js`. List page mirrors the Properties hero pattern, has a sticky filter bar with four category chips (All, Market Reports, Buyer Guides, Seller Guides). Detail page has author, date, read time, share button, related posts.
+>
+> 6. Animation pass with GSAP and Lenis:
+>     * Lenis for site wide inertia smooth scroll, code split, disabled when `prefers-reduced-motion`. Sync `lenis.on("scroll")` to `ScrollTrigger.update` and feed Lenis from `gsap.ticker`.
+>     * One reusable `<AnimatedText>` (with `splitWords` prop for hero word stagger) and one `<AnimatedImage>`. Initial hidden state in CSS, animated to identity on enter. No FOUC.
+>     * A global hook that finds every `h1` to `h6` and every `<p>` on each route, skips elements already wrapped by `AnimatedText`, and adds one ScrollTrigger per element with `start: "top 88%"` (headings, 0.7s) or `start: "top 92%"` (paragraphs, 0.55s, opacity only, no y shift).
+>     * Set the `html.js-anim` gate class via a tiny inline script in `index.html` so headings and paragraphs are hidden before JS boots. Reduced motion clears everything.
+>
+> 7. Mobile pass. Replace fixed `paddingTop/Bottom` rem values on every section with `clamp()` so spacing shrinks on phones. Stack heroes correctly. Drop oversized fixed line heights. Auth pages use `items-start` on mobile so a tall stacked grid is not centered off screen.
+>
+> 8. Production hygiene. Per route `document.title` via a small `PageTitle` component (dynamic for `/Properties/:slug`, `/Agents/:slug`, `/Blog/:slug`). A `ScrollToTop` component that resets scroll on every navigation, preferring Lenis when active. Favicon, meta description, theme color. SPA fallback `.htaccess` in `public/` that does not rewrite `/api`, `/assets`, or `/images`.
+>
+> 9. Self host every image. Find every external image URL in source, download into `public/images/`, rewrite references. Keep dicebear avatar URL as is since it is per user.
+>
+> Constraints across every step:
+> * Do not change existing styles when adding animation or routes. Wrap, do not restyle.
+> * Do not invent new brand tokens. Use the four colors and the container that already exist.
+> * Run the dev server and verify before you say a task is done.
+> * Commit each block with a clear message. Author the commits as the repo owner, not the harness email.
 
 ---
 
-## Tech Stack
+## Architecture
 
-- **React 18** + **Vite** — modern, fast, hot-reload dev loop
-- **Tailwind CSS** + custom brand tokens — utility-first styling discipline
-- **React Router v6** — SPA routing with dynamic slug routes
-- **Framer Motion** — entrance animations on heroes and CTAs
-- **GSAP + ScrollTrigger** — sitewide scroll-triggered reveals
-  for every `h1`–`h6` and `<p>`, hero word-stagger via a single
-  reusable `<AnimatedText>` component (no per-element rewrites),
-  image fade-in via `<AnimatedImage>`. Respects
-  `prefers-reduced-motion`.
-- **Lenis** — page-wide inertia smooth scroll, code-split and lazy
-  loaded, synced to GSAP's ticker so ScrollTrigger updates stay in
-  lock-step with the smooth scroll engine. Smooth-touch disabled
-  so mobile keeps native momentum.
-- **Lucide React** — consistent icon system
-- **localStorage** — zero-backend auth + favorites for the demo
-- **Base44 SDK** — initial scaffold (still wired for forward compatibility)
+```
+src/
+  App.jsx                  Route wiring + providers
+  components/
+    Header.jsx             Theme aware nav with avatar menu
+    Footer.jsx             Newsletter + links
+    Layout.jsx             Mounts smooth scroll + global reveal
+    ScrollToTop.jsx        Resets scroll on route change
+    PageTitle.jsx          Per route document.title
+    AnimatedText.jsx       Hero word stagger reveal
+    AnimatedImage.jsx      Fade plus tiny scale reveal
+    ServiceLanding.jsx     Shared Buy/Sell/Rent layout
+    ui/                    Shadcn style base primitives
+  lib/
+    ClientAuth.jsx         localStorage auth context
+    AuthContext.jsx        Base44 shell, short circuits when no appId
+    propertiesData.js      Listing data
+    agentsData.js          Agent data
+    blogData.js            Blog post data
+    useSmoothScroll.js     Lenis lifecycle
+    useGlobalReveal.js     Sitewide h1 to h6 and p reveal
+    animConfig.js          Shared duration / ease / start
+    scrollManager.js       Lenis aware programmatic scroll
+  pages/
+    Home.jsx               Editorial homepage
+    Properties.jsx         Listings grid with filters
+    PropertyDetail.jsx     Single listing
+    Agents.jsx             Agent directory
+    AgentDetail.jsx        Single agent
+    Buy.jsx Sell.jsx Rent.jsx   Service landings
+    Blog.jsx BlogDetail.jsx     Blog list + post
+    About.jsx Join.jsx          Brand pages
+    SignIn.jsx Register.jsx Profile.jsx   Auth flow
+  index.css                Brand tokens + reveal initial states
+public/
+  favicon.png
+  croped.jpg, about3.webp, about4.jpeg, join page.jpeg
+  images/                  55 self hosted property + agent photos
+  .htaccess                SPA fallback + caching
+index.html                 Pre paint js-anim gate + meta tags
+```
 
 ---
 
-## Running locally
+## Tech stack
+
+React 18, Vite, Tailwind, React Router v6, Framer Motion (hero entrances), GSAP plus ScrollTrigger (sitewide reveals), Lenis (smooth scroll), Lucide icons, localStorage auth.
+
+---
+
+## Run locally
 
 ```bash
 git clone https://github.com/soohanur/orbito.git
@@ -132,53 +159,24 @@ npm install
 npm run dev
 ```
 
-Open http://localhost:5173. Try:
-1. Click **Register** → create an account
-2. Browse **Property** → click any listing → schedule a tour
-3. Heart a few listings → visit **Profile** → see them saved
-4. Click **Agents** → open any agent → submit contact form
-5. Sign out → sign back in → favorites persist
+Open http://localhost:5173.
 
-> **Note on Rollup native dependency:** if `npm run dev` fails with a missing `@rollup/rollup-linux-x64-gnu` module, run `npm i @rollup/rollup-linux-x64-gnu --no-save` to patch a known npm optional-deps bug. This is an npm issue, not an Orbito issue.
+If `npm run dev` complains about `@rollup/rollup-linux-x64-gnu`, run `npm i @rollup/rollup-linux-x64-gnu --no-save`. Known npm bug, not an Orbito issue.
 
----
+## Build for hosting
 
-## Project structure
-
-```
-src/
-├── App.jsx                    # Routes + provider composition
-├── components/
-│   ├── Header.jsx             # Theme-aware nav, auth-aware avatar menu
-│   ├── Footer.jsx
-│   ├── Layout.jsx
-│   └── ui/                    # Base44-scaffolded shadcn-style primitives
-├── lib/
-│   ├── ClientAuth.jsx         # localStorage auth (register/signIn/profile/favorites)
-│   ├── propertiesData.js      # Single source of truth for listings
-│   ├── agentsData.js          # Single source of truth for agents
-│   └── AuthContext.jsx        # Base44 auth shell (kept for forward compat)
-└── pages/
-    ├── Home.jsx
-    ├── Properties.jsx
-    ├── PropertyDetail.jsx     # Dynamic per-listing page
-    ├── Agents.jsx
-    ├── AgentDetail.jsx        # Dynamic per-agent page
-    ├── SignIn.jsx
-    ├── Register.jsx
-    ├── Profile.jsx
-    ├── Join.jsx
-    └── About.jsx
+```bash
+npm run build
 ```
 
----
-
-## What this proves
-
-A single operator, using AI as a multi-specialist team, can ship a polished, multi-page, authenticated web product end-to-end. No design hire. No engineering hire. No copywriter. No template marketplace. Just **intent + AI orchestration + judgment**.
-
-If you are looking for someone who can do the same for your product — that is what I do.
+Output goes to `dist/`. Upload the contents to any static host. Hostinger users can drop `orbito-dist.zip` (in repo root) into File Manager and extract.
 
 ---
 
-**Built by [@soohanur](https://github.com/soohanur)** · Orchestrated with ChatGPT, Claude, Base44, and Claude Code.
+## Why this matters
+
+One person directed four AI tools and shipped a polished, multi page, authenticated web product. No design hire. No engineering hire. No copywriter. Just clear intent, the right tool for each step, and judgment.
+
+If you can do this once you can do it for any product.
+
+Built by [@soohanur](https://github.com/soohanur).
