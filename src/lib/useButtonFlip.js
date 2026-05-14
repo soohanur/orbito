@@ -32,7 +32,7 @@ const setup = (btn) => {
   const transparentBg = isTransparent(bg);
   const hasBorder = borderWidth > 0;
 
-  // Skip naked buttons (no bg, no border) — usually icon-only triggers.
+  // Skip naked buttons (no bg, no border): usually icon-only triggers.
   if (transparentBg && !hasBorder) {
     btn.dataset.flipReady = "skip";
     return;
