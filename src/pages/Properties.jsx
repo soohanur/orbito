@@ -87,7 +87,7 @@ export default function Properties() {
         </AnimatedImage>
         <div className="relative z-10 orbito-container pb-12 sm:pb-20 w-full">
           <AnimatedText className="text-xs tracking-[0.25em] uppercase font-medium block mb-5" as="span" style={{ color: "rgba(241,241,241,0.4)" }}>
-            Property
+            Properties
           </AnimatedText>
           <AnimatedText
             as="h1"

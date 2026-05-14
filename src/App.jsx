@@ -20,6 +20,7 @@ import Blog from './pages/Blog';
 import BlogDetail from './pages/BlogDetail';
 import Services from './pages/Services';
 import ServiceDetail from './pages/ServiceDetail';
+import Contact from './pages/Contact';
 import SignIn from './pages/SignIn';
 import Register from './pages/Register';
 import Profile from './pages/Profile';
@@ -67,6 +68,7 @@ const AuthenticatedApp = () => {
         <Route path="/Blog/:slug" element={<BlogDetail />} />
         <Route path="/Services" element={<Services />} />
         <Route path="/Services/:slug" element={<ServiceDetail />} />
+        <Route path="/Contact" element={<Contact />} />
         <Route path="/SignIn" element={<SignIn />} />
         <Route path="/Register" element={<Register />} />
         <Route path="/Profile" element={<Profile />} />

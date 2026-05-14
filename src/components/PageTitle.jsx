@@ -9,7 +9,7 @@ const BRAND = "Orbito";
 
 const exact = {
   "/": `${BRAND} — Real Estate, Rewired`,
-  "/Properties": `Property — ${BRAND}`,
+  "/Properties": `Properties — ${BRAND}`,
   "/Agents": `Agents — ${BRAND}`,
   "/Join": `Join — ${BRAND}`,
   "/About": `About — ${BRAND}`,
@@ -18,6 +18,7 @@ const exact = {
   "/Rent": `Rent — ${BRAND}`,
   "/Blog": `Blog — ${BRAND}`,
   "/Services": `Services — ${BRAND}`,
+  "/Contact": `Contact — ${BRAND}`,
   "/SignIn": `Sign In — ${BRAND}`,
   "/Register": `Create Account — ${BRAND}`,
   "/Profile": `Profile — ${BRAND}`,

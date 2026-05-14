@@ -4,10 +4,12 @@ import { Menu, X, User, LogOut } from "lucide-react";
 import { useClientAuth } from "@/lib/ClientAuth";
 
 const NAV_ITEMS = [
-  { label: "Property", to: "/Properties" },
+  { label: "Properties", to: "/Properties" },
   { label: "Agents", to: "/Agents" },
   { label: "Join", to: "/Join" },
+  { label: "Services", to: "/Services" },
   { label: "About", to: "/About" },
+  { label: "Contact", to: "/Contact" },
 ];
 
 export default function Header() {
