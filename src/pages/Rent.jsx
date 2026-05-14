@@ -6,7 +6,7 @@ export default function Rent() {
       kicker="Rent"
       titleA="Find Your"
       titleB="Next Lease."
-      intro="Access hidden rentals before they hit the market through agents who know every landlord in town. Decades of NYC experience, no-fee options, and tenant-side negotiation — built for renters who actually want help."
+      intro="Access hidden rentals before they hit the market through agents who know every landlord in town. Decades of NYC experience, no-fee options, and tenant-side negotiation - built for renters who actually want help."
       heroImage="/images/2b4b2f5a9-findrealestate-com-ren-5ea1ad3acb4c.jpg"
       introImage="/images/photo-1502672260266-1c1ef2d93688-75b8beaea48a.jpg"
       benefits={[
@@ -19,9 +19,9 @@ export default function Rent() {
       ]}
       steps={[
         { title: "Brief", body: "Tell your agent your budget, move date, and non-negotiables. They build a shortlist." },
-        { title: "Tour", body: "Back-to-back showings across neighborhoods — public, off-market, and direct-to-landlord." },
+        { title: "Tour", body: "Back-to-back showings across neighborhoods - public, off-market, and direct-to-landlord." },
         { title: "Apply", body: "Paperwork done right the first time: pay stubs, references, guarantor if needed." },
-        { title: "Negotiate", body: "Rent, concessions, lease length — we push on every lever the market gives." },
+        { title: "Negotiate", body: "Rent, concessions, lease length - we push on every lever the market gives." },
         { title: "Sign", body: "Lease reviewed line by line so you know exactly what you're agreeing to." },
         { title: "Move in", body: "Walk-through, key handoff, building intro. Done." },
       ]}

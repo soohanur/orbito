@@ -40,7 +40,7 @@ export const agents = [
     badge: "5-Star Rated",
     phone: "+1 (212) 555-0118",
     email: "mathew.reyes@orbito.com",
-    bio: "Mathew has guided hundreds of first-time buyers through every step of the process — from pre-approval to closing day.",
+    bio: "Mathew has guided hundreds of first-time buyers through every step of the process - from pre-approval to closing day.",
     years: 8,
     languages: ["English", "Spanish"],
   },

@@ -89,7 +89,7 @@ export default function Footer() {
             </nav>
           </div>
 
-          {/* Social — names only, no links */}
+          {/* Social - names only, no links */}
           <div>
             <p className="text-xs tracking-widest uppercase mb-6" style={{ color: "#B3B3B3" }}>Follow</p>
             <nav className="flex flex-col gap-3">

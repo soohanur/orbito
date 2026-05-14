@@ -64,7 +64,7 @@ export default function Join() {
 
   return (
     <div style={{ background: "#F1F1F1" }}>
-      {/* Hero — mirrors Properties hero pattern */}
+      {/* Hero - mirrors Properties hero pattern */}
       <section className="relative flex items-end overflow-hidden" style={{ minHeight: "56vh" }}>
         <AnimatedImage className="absolute inset-0">
           <img
@@ -107,11 +107,11 @@ export default function Join() {
             <div className="grid sm:grid-cols-2 gap-16 items-start">
               <div>
                 <p className="text-lg sm:text-xl leading-relaxed mb-8" style={{ color: "#383A3A" }}>
-                  At ORBITO, our agents don't just work for the brand — they own a part of it.{" "}
-                  <span style={{ color: "#151717", fontWeight: 600 }}>We give top performers real equity, so they're invested in more than just your transaction — they're invested in your outcome.</span>
+                  At ORBITO, our agents don't just work for the brand - they own a part of it.{" "}
+                  <span style={{ color: "#151717", fontWeight: 600 }}>We give top performers real equity, so they're invested in more than just your transaction - they're invested in your outcome.</span>
                 </p>
                 <p className="text-base leading-relaxed mb-10" style={{ color: "#383A3A" }}>
-                  Agents are certified, supported, and equipped to deliver five-star service — because their success is tied to yours. You're not just here to close deals — you're building a career, a life, a legacy.
+                  Agents are certified, supported, and equipped to deliver five-star service - because their success is tied to yours. You're not just here to close deals - you're building a career, a life, a legacy.
                 </p>
                 <button
                   className="group inline-flex items-center gap-3 rounded-full text-sm font-semibold tracking-widest uppercase transition-all duration-500 hover:-translate-y-0.5 hover:shadow-lg px-8 py-4"

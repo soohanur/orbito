@@ -6,7 +6,7 @@ export default function Sell() {
       kicker="Sell"
       titleA="Sell Fast,"
       titleB="Sell High."
-      intro="Pro staging, strategic pricing, constant open houses, and agents who don't stop working until the right buyer signs. We don't list and wait — we list and work."
+      intro="Pro staging, strategic pricing, constant open houses, and agents who don't stop working until the right buyer signs. We don't list and wait - we list and work."
       heroImage="/images/fcca5e9fd-findrealestate-com-sel-e187393c02ac.jpg"
       introImage="/images/photo-1600596542815-ffad4c1539a9-2757c5a980b6.jpg"
       benefits={[
@@ -19,14 +19,14 @@ export default function Sell() {
       ]}
       steps={[
         { title: "Value", body: "Free pricing analysis grounded in your block's last 12 months of comps." },
-        { title: "Prep", body: "Staging, repairs, and a punch list — we tell you exactly what moves the needle." },
+        { title: "Prep", body: "Staging, repairs, and a punch list - we tell you exactly what moves the needle." },
         { title: "Launch", body: "Photos, floor plans, video, and a coordinated marketing push from day one." },
         { title: "Show", body: "Open houses + private tours run by agents who can answer every buyer question." },
         { title: "Negotiate", body: "We pressure-test every offer and push for clean terms, not just headline price." },
-        { title: "Close", body: "Inspection, attorney, lender — we keep all parties on schedule to your closing date." },
+        { title: "Close", body: "Inspection, attorney, lender - we keep all parties on schedule to your closing date." },
       ]}
       faqs={[
-        { q: "What's my home worth?", a: "We'll run a no-obligation Comparative Market Analysis on your address — typically within 48 hours of your request." },
+        { q: "What's my home worth?", a: "We'll run a no-obligation Comparative Market Analysis on your address - typically within 48 hours of your request." },
         { q: "How long do homes take to sell?", a: "Properly priced listings in our markets average 35–55 days on market. Aggressive pricing + great prep can cut that in half." },
         { q: "What fees come out of my proceeds?", a: "Standard commission, attorney fees, transfer taxes, and any seller concessions. Your agent will model your net at every offer." },
         { q: "Should I sell before I buy?", a: "Depends on liquidity and contingencies. We help clients model both paths and pick the lower-risk one." },

@@ -1,9 +1,9 @@
-# SPA fallback — every non-asset request hits index.html so React Router can handle it.
+# SPA fallback - every non-asset request hits index.html so React Router can handle it.
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
   RewriteRule ^index\.html$ - [L]
-  # Never rewrite real assets or API-style paths — let them 404 naturally
+  # Never rewrite real assets or API-style paths - let them 404 naturally
   # so client code (e.g. SDKs) can detect "no backend here".
   RewriteCond %{REQUEST_URI} ^/api/ [OR]
   RewriteCond %{REQUEST_URI} ^/assets/ [OR]

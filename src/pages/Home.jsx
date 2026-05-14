@@ -46,7 +46,7 @@ function HeroSection() {
         />
       </AnimatedImage>
 
-      {/* Text + CTA — centered, over the sky */}
+      {/* Text + CTA - centered, over the sky */}
       <div
         className="relative z-10 flex flex-col items-center text-center"
         style={{ paddingLeft: "1.5rem", paddingRight: "1.5rem", marginTop: "-165px" }}
@@ -143,7 +143,7 @@ function ForAgentsSection() {
     <section style={{ background: "#F1F1F1", paddingTop: "clamp(3rem, 9vw, 7rem)", paddingBottom: "clamp(3rem, 9vw, 7rem)", borderTop: "1px solid rgba(21,23,23,0.08)" }}>
       <div className="orbito-container">
         <div className="grid md:grid-cols-2 gap-4 md:gap-20 items-stretch">
-          {/* Left — images grid (agents side) */}
+          {/* Left - images grid (agents side) */}
           <AnimatedElement delay={100}>
             <div className="grid grid-cols-2 gap-3 sm:gap-4 h-full md:min-h-[540px]">
               <div className="overflow-hidden" style={{ borderRadius: "1rem", aspectRatio: "3/4" }}>
@@ -155,7 +155,7 @@ function ForAgentsSection() {
             </div>
           </AnimatedElement>
 
-          {/* Right — text + description box */}
+          {/* Right - text + description box */}
           <AnimatedElement>
             <div className="flex flex-col justify-between h-full">
               <div>
@@ -192,7 +192,7 @@ function ForAgentsSection() {
                   </div>
                   <div className="relative z-10 p-8 md:p-10">
                     <p className="font-light leading-relaxed mb-8" style={{ fontSize: "16px", color: "rgba(241,241,241,0.78)", lineHeight: "1.75" }}>
-                      At ORBITO, our agents don't just work for the brand — they own a part of it. We give top performers real equity, so they're invested in more than just your transaction — they're invested in your outcome. Agents are certified, supported, and equipped to deliver five-star service — because their success is tied to yours.
+                      At ORBITO, our agents don't just work for the brand - they own a part of it. We give top performers real equity, so they're invested in more than just your transaction - they're invested in your outcome. Agents are certified, supported, and equipped to deliver five-star service - because their success is tied to yours.
                     </p>
                     <Link to="/Join">
                       <button
@@ -223,7 +223,7 @@ function TestimonialsSection() {
   const staticFallback = [
   { quote: "Michael was a great realtor. Such a hard worker, dedicated to helping us find the perfect neighborhood, price point and home. Tireless and dedicated. Would recommend him 100%!", author: "Bernadette Hogan", location: "New York, NY" },
   { quote: "Shirin was truly a blessing to work with. She helped us find our perfect condo in a great area. She was patient and very understanding.", author: "Tyleen", location: "Brooklyn, NY" },
-  { quote: "Working with Mathew was an absolute pleasure, and I highly recommend him to any serious homebuyer — especially first-time buyers who may feel overwhelmed by the process.", author: "Johanna Nieto", location: "Queens, NY" }];
+  { quote: "Working with Mathew was an absolute pleasure, and I highly recommend him to any serious homebuyer - especially first-time buyers who may feel overwhelmed by the process.", author: "Johanna Nieto", location: "Queens, NY" }];
 
 
   useEffect(() => {
@@ -311,7 +311,7 @@ function TestimonialsSection() {
 /* ── SERVICES ── */
 function ServicesSection() {
   const services = [
-  { label: "Buy", to: "/Buy", image: "/images/5abf9e628-findrealestate-com-buy-4c228619891a.jpg", description: "Buy smarter with expert agents backed by mortgage, legal, and appraisal pros — dialed in to get you the best deal, fast. We've done this over 10,000 times, and we know what wins." },
+  { label: "Buy", to: "/Buy", image: "/images/5abf9e628-findrealestate-com-buy-4c228619891a.jpg", description: "Buy smarter with expert agents backed by mortgage, legal, and appraisal pros - dialed in to get you the best deal, fast. We've done this over 10,000 times, and we know what wins." },
   { label: "Sell", to: "/Sell", image: "/images/fcca5e9fd-findrealestate-com-sel-e187393c02ac.jpg", description: "Sell fast, sell high. Your listing gets pro staging, strategic pricing, constant open houses, and agents who never stop working until the right buyer signs." },
   { label: "Rent", to: "/Rent", image: "/images/2b4b2f5a9-findrealestate-com-ren-5ea1ad3acb4c.jpg", description: "Access hidden rentals before they hit the market through agents who know every landlord in town. With decades of NYC experience, we unlock the best deals you won't find online." }];
 
@@ -413,7 +413,7 @@ function SupportSection() {
           </AnimatedElement>
           <AnimatedElement delay={150}>
             <p className="text-lg font-light leading-relaxed mb-8" style={{ color: "rgba(241,241,241,0.7)" }}>
-              <span style={{ color: "#F1F1F1", fontWeight: 600 }}>The real estate market never stands still — and neither do we.</span> Our experts offer continued support beyond the sale, helping you maximize your investment.
+              <span style={{ color: "#F1F1F1", fontWeight: 600 }}>The real estate market never stands still - and neither do we.</span> Our experts offer continued support beyond the sale, helping you maximize your investment.
             </p>
             <Link to="/Services">
               <button

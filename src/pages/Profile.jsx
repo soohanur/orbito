@@ -123,8 +123,8 @@ export default function Profile() {
                 </div>
               ) : (
                 <div className="space-y-3 text-sm" style={{ color: "#383A3A" }}>
-                  <div className="flex items-center gap-2"><Phone className="h-3.5 w-3.5" style={{ color: "#B3B3B3" }} /> {user.phone || "—"}</div>
-                  <div className="flex items-center gap-2"><MapPin className="h-3.5 w-3.5" style={{ color: "#B3B3B3" }} /> {user.location || "—"}</div>
+                  <div className="flex items-center gap-2"><Phone className="h-3.5 w-3.5" style={{ color: "#B3B3B3" }} /> {user.phone || "-"}</div>
+                  <div className="flex items-center gap-2"><MapPin className="h-3.5 w-3.5" style={{ color: "#B3B3B3" }} /> {user.location || "-"}</div>
                   <p className="leading-relaxed">{user.bio || "Add a short bio so agents can get to know you."}</p>
 
                   <div className="flex gap-2 pt-3">

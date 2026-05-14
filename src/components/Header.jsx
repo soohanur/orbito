@@ -93,7 +93,7 @@ export default function Header() {
               </span>
             </Link>
 
-            <nav className="hidden sm:flex items-center gap-10 lg:gap-14">
+            <nav className="hidden md:flex items-center gap-5 lg:gap-7">
               {NAV_ITEMS.map((item) => {
                 const active = location.pathname === item.to ||
                   (item.to !== "/" && location.pathname.startsWith(item.to + "/"));
@@ -113,7 +113,7 @@ export default function Header() {
               })}
             </nav>
 
-            <div className="hidden sm:flex items-center gap-3">
+            <div className="hidden md:flex items-center gap-3">
               {user ? (
                 <div className="relative" ref={userMenuRef}>
                   <button
@@ -169,7 +169,7 @@ export default function Header() {
             </div>
 
             <button
-              className="sm:hidden p-2 transition-colors duration-300"
+              className="md:hidden p-2 transition-colors duration-300"
               style={{ color: "#151717" }}
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle menu"

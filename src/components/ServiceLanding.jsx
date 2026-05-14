@@ -20,7 +20,7 @@ export default function ServiceLanding({
   benefits = [],     // string[]
   steps = [],        // [{ title, body }]
   faqs = [],         // [{ q, a }]
-  listingFilter,     // (p) => boolean — which propertyListings to show
+  listingFilter,     // (p) => boolean - which propertyListings to show
   ctaTitle,
   ctaSubtitle,
   ctaButton = "Browse Listings",

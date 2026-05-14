@@ -52,7 +52,7 @@ export default function SignIn() {
               Sign in to Orbito.
             </AnimatedText>
             <AnimatedText as="p" delay={0.2} className="font-light text-lg" style={{ color: "#383A3A", maxWidth: "460px" }}>
-              Pick up where you left off. Saved homes, tour requests, and your agent — all in one place.
+              Pick up where you left off. Saved homes, tour requests, and your agent - all in one place.
             </AnimatedText>
           </div>
 

@@ -27,10 +27,10 @@ const AnimatedElement = ({ children, className, delay = 0 }) => {
 };
 
 const values = [
-  { label: "Transparency", body: "We believe real estate should feel human. No hidden agendas — just honest guidance at every step." },
+  { label: "Transparency", body: "We believe real estate should feel human. No hidden agendas - just honest guidance at every step." },
   { label: "Ownership", body: "Our agents are equity holders. Their commitment to your outcome is personal, not transactional." },
   { label: "Excellence", body: "From the first showing to the final signature, we hold ourselves to a five-star standard." },
-  { label: "Community", body: "We serve New York and Philadelphia as neighbors — invested in the places we help you call home." },
+  { label: "Community", body: "We serve New York and Philadelphia as neighbors - invested in the places we help you call home." },
 ];
 
 const stats = [
@@ -75,7 +75,7 @@ export default function About() {
               className="font-light leading-relaxed"
               style={{ fontSize: "clamp(18px, 2vw, 26px)", color: "#383A3A", maxWidth: "680px" }}
             >
-              Orbito is a premier real estate brokerage headquartered in New York City, with offices in Philadelphia. We specialize in buying, selling, and renting residential and commercial properties — guided by a belief that every move matters.
+              Orbito is a premier real estate brokerage headquartered in New York City, with offices in Philadelphia. We specialize in buying, selling, and renting residential and commercial properties - guided by a belief that every move matters.
             </AnimatedText>
           </div>
         </div>
@@ -107,13 +107,13 @@ export default function About() {
               </div>
               <div>
                 <p className="font-light leading-relaxed mb-6" style={{ fontSize: "17px", color: "#383A3A" }}>
-                  Orbito was founded on a simple but powerful idea: that real estate should work for the people who live it — both clients and agents. We built a brokerage where agents are partners, not just producers, and where clients receive the kind of attention that comes from people genuinely invested in their outcome.
+                  Orbito was founded on a simple but powerful idea: that real estate should work for the people who live it - both clients and agents. We built a brokerage where agents are partners, not just producers, and where clients receive the kind of attention that comes from people genuinely invested in their outcome.
                 </p>
                 <p className="font-light leading-relaxed mb-6" style={{ fontSize: "17px", color: "#383A3A" }}>
-                  Over the years, we've grown from a small team in Midtown Manhattan into one of the region's most trusted names in residential and commercial real estate. We've closed more than 10,000 transactions across New York City and Philadelphia — and we're just getting started.
+                  Over the years, we've grown from a small team in Midtown Manhattan into one of the region's most trusted names in residential and commercial real estate. We've closed more than 10,000 transactions across New York City and Philadelphia - and we're just getting started.
                 </p>
                 <p className="font-light leading-relaxed" style={{ fontSize: "17px", color: "#383A3A" }}>
-                  Today, Orbito represents a movement: a new way of thinking about property, career, and community. Our certified agents are trained, supported, and empowered to deliver five-star results — every time.
+                  Today, Orbito represents a movement: a new way of thinking about property, career, and community. Our certified agents are trained, supported, and empowered to deliver five-star results - every time.
                 </p>
               </div>
             </div>

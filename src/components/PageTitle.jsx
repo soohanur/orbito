@@ -8,20 +8,20 @@ import { findServiceBySlug } from "@/lib/servicesData";
 const BRAND = "Orbito";
 
 const exact = {
-  "/": `${BRAND} — Real Estate, Rewired`,
-  "/Properties": `Properties — ${BRAND}`,
-  "/Agents": `Agents — ${BRAND}`,
-  "/Join": `Join — ${BRAND}`,
-  "/About": `About — ${BRAND}`,
-  "/Buy": `Buy — ${BRAND}`,
-  "/Sell": `Sell — ${BRAND}`,
-  "/Rent": `Rent — ${BRAND}`,
-  "/Blog": `Blog — ${BRAND}`,
-  "/Services": `Services — ${BRAND}`,
-  "/Contact": `Contact — ${BRAND}`,
-  "/SignIn": `Sign In — ${BRAND}`,
-  "/Register": `Create Account — ${BRAND}`,
-  "/Profile": `Profile — ${BRAND}`,
+  "/": `${BRAND} - Real Estate, Rewired`,
+  "/Properties": `Properties - ${BRAND}`,
+  "/Agents": `Agents - ${BRAND}`,
+  "/Join": `Join - ${BRAND}`,
+  "/About": `About - ${BRAND}`,
+  "/Buy": `Buy - ${BRAND}`,
+  "/Sell": `Sell - ${BRAND}`,
+  "/Rent": `Rent - ${BRAND}`,
+  "/Blog": `Blog - ${BRAND}`,
+  "/Services": `Services - ${BRAND}`,
+  "/Contact": `Contact - ${BRAND}`,
+  "/SignIn": `Sign In - ${BRAND}`,
+  "/Register": `Create Account - ${BRAND}`,
+  "/Profile": `Profile - ${BRAND}`,
 };
 
 const titleFor = (pathname) => {
@@ -30,25 +30,25 @@ const titleFor = (pathname) => {
   let m = matchPath("/Properties/:slug", pathname);
   if (m) {
     const p = findPropertyBySlug(m.params.slug);
-    return p ? `${p.neighborhood} · ${p.address} — ${BRAND}` : `Property — ${BRAND}`;
+    return p ? `${p.neighborhood} · ${p.address} - ${BRAND}` : `Property - ${BRAND}`;
   }
 
   m = matchPath("/Agents/:slug", pathname);
   if (m) {
     const a = findAgentBySlug(m.params.slug);
-    return a ? `${a.name} · Agent — ${BRAND}` : `Agent — ${BRAND}`;
+    return a ? `${a.name} · Agent - ${BRAND}` : `Agent - ${BRAND}`;
   }
 
   m = matchPath("/Blog/:slug", pathname);
   if (m) {
     const b = findBlogBySlug(m.params.slug);
-    return b ? `${b.title} — ${BRAND}` : `Blog — ${BRAND}`;
+    return b ? `${b.title} - ${BRAND}` : `Blog - ${BRAND}`;
   }
 
   m = matchPath("/Services/:slug", pathname);
   if (m) {
     const s = findServiceBySlug(m.params.slug);
-    return s ? `${s.title} — ${BRAND}` : `Services — ${BRAND}`;
+    return s ? `${s.title} - ${BRAND}` : `Services - ${BRAND}`;
   }
 
   return BRAND;
