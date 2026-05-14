@@ -20,6 +20,16 @@ const invertBrand = (c) => {
   return c;
 };
 
+const getParentBg = (el) => {
+  let p = el.parentElement;
+  while (p && p !== document.body) {
+    const c = getComputedStyle(p).backgroundColor;
+    if (c && !isTransparent(c)) return c;
+    p = p.parentElement;
+  }
+  return getComputedStyle(document.body).backgroundColor || "rgb(241, 241, 241)";
+};
+
 const setup = (btn) => {
   if (btn.dataset.flipReady) return;
 
@@ -47,10 +57,15 @@ const setup = (btn) => {
     flipColor = invertBrand(borderColor);
     flipBorder = `1px solid ${borderColor}`;
   } else {
-    // currently solid -> on hover, transparent with border = original bg
+    // currently solid -> on hover, transparent with border + text in a
+    // color that contrasts with the surrounding section (not the button's
+    // own bg). Keeps the hover state readable whether the button sits on
+    // a light page or a dark section.
+    const parentBg = getParentBg(btn);
+    const contrast = invertBrand(parentBg);
     flipBg = "transparent";
-    flipColor = bg;
-    flipBorder = `1px solid ${bg}`;
+    flipColor = contrast;
+    flipBorder = `1px solid ${contrast}`;
   }
 
   // Snapshot original inline style values for restore
