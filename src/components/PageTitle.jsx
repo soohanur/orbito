@@ -3,6 +3,7 @@ import { useLocation, matchPath } from "react-router-dom";
 import { findPropertyBySlug } from "@/lib/propertiesData";
 import { findAgentBySlug } from "@/lib/agentsData";
 import { findBlogBySlug } from "@/lib/blogData";
+import { findServiceBySlug } from "@/lib/servicesData";
 
 const BRAND = "Orbito";
 
@@ -16,6 +17,7 @@ const exact = {
   "/Sell": `Sell — ${BRAND}`,
   "/Rent": `Rent — ${BRAND}`,
   "/Blog": `Blog — ${BRAND}`,
+  "/Services": `Services — ${BRAND}`,
   "/SignIn": `Sign In — ${BRAND}`,
   "/Register": `Create Account — ${BRAND}`,
   "/Profile": `Profile — ${BRAND}`,
@@ -40,6 +42,12 @@ const titleFor = (pathname) => {
   if (m) {
     const b = findBlogBySlug(m.params.slug);
     return b ? `${b.title} — ${BRAND}` : `Blog — ${BRAND}`;
+  }
+
+  m = matchPath("/Services/:slug", pathname);
+  if (m) {
+    const s = findServiceBySlug(m.params.slug);
+    return s ? `${s.title} — ${BRAND}` : `Services — ${BRAND}`;
   }
 
   return BRAND;

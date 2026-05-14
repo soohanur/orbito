@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import AnimatedText from "@/components/AnimatedText";
 import AnimatedImage from "@/components/AnimatedImage";
 import { blogPosts } from "@/lib/blogData";
+import { services as siteServices } from "@/lib/servicesData";
 import { ArrowRight, Quote } from "lucide-react";
 import { Link } from "react-router-dom";
 import { base44 } from "@/api/base44Client";
@@ -384,10 +385,12 @@ function SupportSection() {
   const [services, setServices] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const staticFallback = [
-  { title: "Mortgage Services", description: "Helping you secure your dream home with flexible mortgage options.", image_url: "/images/b774f34cb-findrealestate-com-mor-a90fcee891c3.jpg" },
-  { title: "Property Management", description: "Let us handle the details so you can enjoy the rewards.", image_url: "/images/5e8fd2262-findrealestate-com-pro-dbc5c56b7560.jpg" },
-  { title: "Construction & Development", description: "Guiding you through building and developing properties with expert insight.", image_url: "/images/4ee46fcdc-findrealestate-com-dev-fb4fc37e4ec7.jpg" }];
+  const staticFallback = siteServices.map((s) => ({
+    slug: s.slug,
+    title: s.title,
+    description: s.excerpt,
+    image_url: s.image,
+  }));
 
 
   useEffect(() => {
@@ -412,32 +415,35 @@ function SupportSection() {
             <p className="text-lg font-light leading-relaxed mb-8" style={{ color: "rgba(241,241,241,0.7)" }}>
               <span style={{ color: "#F1F1F1", fontWeight: 600 }}>The real estate market never stands still — and neither do we.</span> Our experts offer continued support beyond the sale, helping you maximize your investment.
             </p>
-            <button
-              className="group inline-flex items-center gap-3 rounded-full text-sm font-semibold tracking-widest uppercase transition-all duration-400 hover:-translate-y-0.5 px-8 py-4"
-              style={{ background: "#F1F1F1", color: "#151717" }}>
-              
-              Discover Our Services
-              <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-            </button>
+            <Link to="/Services">
+              <button
+                className="group inline-flex items-center gap-3 rounded-full text-sm font-semibold tracking-widest uppercase transition-all duration-400 hover:-translate-y-0.5 px-8 py-4"
+                style={{ background: "#F1F1F1", color: "#151717" }}>
+                Discover Our Services
+                <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              </button>
+            </Link>
           </AnimatedElement>
         </div>
 
         <div className={`grid grid-cols-1 sm:grid-cols-3 gap-6 transition-opacity duration-500 ${loading ? "opacity-30" : "opacity-100"}`}>
           {items.map((svc, i) =>
-          <AnimatedElement key={i} delay={i * 120}>
-              <div className="group relative overflow-hidden flex flex-col justify-end hover:-translate-y-2 hover:shadow-2xl transition-all duration-500" style={{ borderRadius: "1.5rem", height: "420px", border: "1px solid rgba(241,241,241,0.08)" }}>
-                <div className="absolute inset-0">
-                  <img src={svc.image_url} alt={svc.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" />
-                  <div className="absolute inset-0" style={{ background: "linear-gradient(to top, #151717 0%, rgba(21,23,23,0.5) 55%, transparent 100%)" }} />
+          <AnimatedElement key={svc.slug || i} delay={i * 120}>
+              <Link to={svc.slug ? `/Services/${svc.slug}` : "/Services"} className="block">
+                <div className="group relative overflow-hidden flex flex-col justify-end hover:-translate-y-2 hover:shadow-2xl transition-all duration-500" style={{ borderRadius: "1.5rem", height: "420px", border: "1px solid rgba(241,241,241,0.08)" }}>
+                  <div className="absolute inset-0">
+                    <img src={svc.image_url} alt={svc.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" />
+                    <div className="absolute inset-0" style={{ background: "linear-gradient(to top, #151717 0%, rgba(21,23,23,0.5) 55%, transparent 100%)" }} />
+                  </div>
+                  <div className="relative z-10 p-8">
+                    <h3 className="font-bold text-2xl mb-3 leading-tight" style={{ color: "#F1F1F1" }}>{svc.title}</h3>
+                    <p className="text-sm leading-relaxed mb-6 font-light" style={{ color: "rgba(241,241,241,0.65)" }}>{svc.description}</p>
+                    <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase transition-colors duration-300" style={{ color: "#F1F1F1" }}>
+                      Learn More <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    </span>
+                  </div>
                 </div>
-                <div className="relative z-10 p-8">
-                  <h3 className="font-bold text-2xl mb-3 leading-tight" style={{ color: "#F1F1F1" }}>{svc.title}</h3>
-                  <p className="text-sm leading-relaxed mb-6 font-light" style={{ color: "rgba(241,241,241,0.65)" }}>{svc.description}</p>
-                  <button className="group/btn inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase transition-colors duration-300" style={{ color: "#F1F1F1" }}>
-                    Learn More <ArrowRight className="h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
-                  </button>
-                </div>
-              </div>
+              </Link>
             </AnimatedElement>
           )}
         </div>
