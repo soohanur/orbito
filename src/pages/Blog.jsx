@@ -79,6 +79,7 @@ export default function Blog() {
               {categories.map((c) => (
                 <button
                   key={c}
+                  data-no-flip="1"
                   onClick={() => setCat(c)}
                   className="px-4 py-2 text-xs font-semibold tracking-widest uppercase transition-all duration-300 rounded-full"
                   style={cat === c

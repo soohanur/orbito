@@ -121,6 +121,7 @@ export default function Properties() {
               {filters.map((f) => (
                 <button
                   key={f}
+                  data-no-flip="1"
                   onClick={() => setActiveFilter(f)}
                   className="px-5 py-2 text-xs font-semibold tracking-widest uppercase transition-all duration-300 rounded-full"
                   style={activeFilter === f

@@ -85,6 +85,7 @@ export default function Agents() {
               {specialties.map(s => (
                 <button
                   key={s}
+                  data-no-flip="1"
                   onClick={() => setActiveFilter(s)}
                   className="px-4 py-2 text-xs font-semibold tracking-widest uppercase transition-all duration-300 rounded-full"
                   style={activeFilter === s
@@ -169,6 +170,7 @@ export default function Agents() {
             {[1, 2, 3, 4, "...", 38, 39, 40].map((page, i) => (
               <button
                 key={i}
+                data-no-flip="1"
                 className="w-9 h-9 flex items-center justify-center text-xs font-semibold rounded-full transition-all duration-200"
                 style={page === 1
                   ? { background: "#151717", color: "#F1F1F1" }
@@ -179,6 +181,7 @@ export default function Agents() {
               </button>
             ))}
             <button
+              data-no-flip="1"
               className="flex items-center gap-1.5 px-4 h-9 text-xs font-semibold tracking-widest uppercase rounded-full transition-all duration-200"
               style={{ border: "1px solid rgba(21,23,23,0.15)", color: "#383A3A" }}
             >
