@@ -179,6 +179,16 @@ html.js-anim p:not(.anim-text):not(.anim-text-words):not(.no-anim) {
   }
 }
 
+/* ─── Buttons: hover = color flip only ─── */
+/* Strip movement, shadow, and scale effects on button hover sitewide
+   so the only thing changing on hover is the color/border flip
+   handled by useButtonFlip. */
+button:hover,
+button:hover * {
+  transform: none !important;
+  box-shadow: none !important;
+}
+
 /* ─── Scrollbar ─── */
 
 ::-webkit-scrollbar { width: 5px; }
