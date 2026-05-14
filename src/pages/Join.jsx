@@ -207,24 +207,6 @@ export default function Join() {
         </section>
       </AnimatedElement>
 
-      {/* CTA */}
-      <section className="relative overflow-hidden" style={{ paddingTop: "clamp(3rem, 10vw, 8rem)", paddingBottom: "clamp(3rem, 10vw, 8rem)", background: "#151717" }}>
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full blur-[120px] pointer-events-none" style={{ background: "rgba(241,241,241,0.04)" }} />
-        <div className="orbito-container relative z-10">
-          <AnimatedElement>
-            <h2 className="font-black tracking-tighter mb-10" style={{ fontSize: "clamp(44px, 6vw, 82px)", lineHeight: 0.93, color: "#F1F1F1", letterSpacing: "-0.04em" }}>
-              Ready to Own<br />Your Career?
-            </h2>
-            <button
-              className="group inline-flex items-center gap-3 rounded-full text-sm font-semibold tracking-widest uppercase transition-all duration-500 hover:-translate-y-0.5 px-10 py-5"
-              style={{ background: "#F1F1F1", color: "#151717" }}
-            >
-              Join The Movement
-              <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-            </button>
-          </AnimatedElement>
-        </div>
-      </section>
     </div>
   );
 }

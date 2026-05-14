@@ -1,15 +1,19 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { Menu, X, User, LogOut } from "lucide-react";
+import { Menu, X, User, LogOut, ChevronDown } from "lucide-react";
 import { useClientAuth } from "@/lib/ClientAuth";
+
+const INSIGHTS_ITEMS = [
+  { label: "Services", to: "/Services" },
+  { label: "About", to: "/About" },
+  { label: "Contact", to: "/Contact" },
+];
 
 const NAV_ITEMS = [
   { label: "Properties", to: "/Properties" },
   { label: "Agents", to: "/Agents" },
   { label: "Join", to: "/Join" },
-  { label: "Services", to: "/Services" },
-  { label: "About", to: "/About" },
-  { label: "Contact", to: "/Contact" },
+  { label: "Insights", dropdown: INSIGHTS_ITEMS },
 ];
 
 export default function Header() {
@@ -17,8 +21,10 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
+  const [insightsOpen, setInsightsOpen] = useState(false);
   const lastScrollY = useRef(0);
   const userMenuRef = useRef(null);
+  const insightsRef = useRef(null);
   const location = useLocation();
   const navigate = useNavigate();
   const isHome = location.pathname === "/";
@@ -53,11 +59,13 @@ export default function Header() {
   useEffect(() => {
     setMobileOpen(false);
     setUserMenuOpen(false);
+    setInsightsOpen(false);
   }, [location.pathname]);
 
   useEffect(() => {
     const onClick = (e) => {
       if (userMenuRef.current && !userMenuRef.current.contains(e.target)) setUserMenuOpen(false);
+      if (insightsRef.current && !insightsRef.current.contains(e.target)) setInsightsOpen(false);
     };
     document.addEventListener("mousedown", onClick);
     return () => document.removeEventListener("mousedown", onClick);
@@ -69,6 +77,14 @@ export default function Header() {
     signOut();
     setUserMenuOpen(false);
     navigate("/");
+  };
+
+  const isItemActive = (item) => {
+    if (item.dropdown) {
+      return item.dropdown.some((d) => location.pathname === d.to || location.pathname.startsWith(d.to + "/"));
+    }
+    return location.pathname === item.to ||
+      (item.to !== "/" && location.pathname.startsWith(item.to + "/"));
   };
 
   return (
@@ -93,10 +109,47 @@ export default function Header() {
               </span>
             </Link>
 
-            <nav className="hidden md:flex items-center gap-5 lg:gap-7">
+            <nav className="hidden md:flex items-center gap-10 lg:gap-14">
               {NAV_ITEMS.map((item) => {
-                const active = location.pathname === item.to ||
-                  (item.to !== "/" && location.pathname.startsWith(item.to + "/"));
+                const active = isItemActive(item);
+                if (item.dropdown) {
+                  return (
+                    <div key={item.label} ref={insightsRef} className="relative">
+                      <button
+                        onClick={() => setInsightsOpen((v) => !v)}
+                        className="inline-flex items-center gap-1.5 text-sm font-medium tracking-wide transition-colors duration-200"
+                        style={{
+                          color: active ? "#151717" : "#383A3A",
+                          fontWeight: active ? 600 : 500,
+                        }}
+                      >
+                        {item.label}
+                        <ChevronDown className="h-3.5 w-3.5 transition-transform" style={{ transform: insightsOpen ? "rotate(180deg)" : "none" }} />
+                      </button>
+                      {insightsOpen && (
+                        <div
+                          className="absolute right-0 mt-3 w-48 rounded-2xl overflow-hidden"
+                          style={{ background: "#fff", border: "1px solid rgba(21,23,23,0.08)", boxShadow: "0 10px 40px rgba(21,23,23,0.12)" }}
+                        >
+                          {item.dropdown.map((d) => {
+                            const dActive = location.pathname === d.to || location.pathname.startsWith(d.to + "/");
+                            return (
+                              <Link
+                                key={d.label}
+                                to={d.to}
+                                onClick={() => setInsightsOpen(false)}
+                                className="block px-4 py-3 text-sm transition-colors hover:bg-[#F6F6F6]"
+                                style={{ color: dActive ? "#151717" : "#383A3A", fontWeight: dActive ? 600 : 500 }}
+                              >
+                                {d.label}
+                              </Link>
+                            );
+                          })}
+                        </div>
+                      )}
+                    </div>
+                  );
+                }
                 return (
                   <Link
                     key={item.label}
@@ -181,17 +234,37 @@ export default function Header() {
       </header>
 
       {mobileOpen && (
-        <div className="fixed inset-0 z-40 bg-[#F1F1F1] pt-16 flex flex-col">
+        <div className="fixed inset-0 z-40 bg-[#F1F1F1] pt-16 flex flex-col overflow-y-auto">
           <nav className="flex flex-col px-8 py-8">
-            {NAV_ITEMS.map((item) => (
-              <Link
-                key={item.label}
-                to={item.to}
-                className="py-5 border-b border-black/10 text-[#151717] font-medium text-xl hover:text-[#383A3A] transition-colors"
-              >
-                {item.label}
-              </Link>
-            ))}
+            {NAV_ITEMS.map((item) => {
+              if (item.dropdown) {
+                return (
+                  <div key={item.label} className="py-5 border-b border-black/10">
+                    <div className="text-[#151717] font-medium text-xl mb-3">{item.label}</div>
+                    <div className="flex flex-col pl-4 gap-3">
+                      {item.dropdown.map((d) => (
+                        <Link
+                          key={d.label}
+                          to={d.to}
+                          className="text-[#383A3A] text-base hover:text-[#151717] transition-colors"
+                        >
+                          {d.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                );
+              }
+              return (
+                <Link
+                  key={item.label}
+                  to={item.to}
+                  className="py-5 border-b border-black/10 text-[#151717] font-medium text-xl hover:text-[#383A3A] transition-colors"
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
 
             {user ? (
               <>

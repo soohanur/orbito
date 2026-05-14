@@ -188,28 +188,6 @@ export default function Agents() {
         </div>
       </section>
 
-      <section style={{ background: "#151717", paddingTop: "clamp(3rem, 9vw, 7rem)", paddingBottom: "clamp(3rem, 9vw, 7rem)" }}>
-        <div className="orbito-container">
-          <AnimatedElement>
-            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-10">
-              <div>
-                <h2 className="font-black tracking-tighter mb-4" style={{ fontSize: "clamp(36px, 4.5vw, 68px)", lineHeight: 0.93, color: "#F1F1F1", letterSpacing: "-0.04em" }}>
-                  Ready to Own<br /><span style={{ color: "rgba(241,241,241,0.35)", fontWeight: 300 }}>Your Career?</span>
-                </h2>
-                <p className="font-light text-lg" style={{ color: "rgba(241,241,241,0.55)", maxWidth: "480px" }}>
-                  Join 1,000+ agents who chose to build equity, not just commissions.
-                </p>
-              </div>
-              <Link to="/Join">
-                <button className="group shrink-0 inline-flex items-center gap-3 rounded-full text-sm font-semibold tracking-widest uppercase transition-all duration-400 hover:-translate-y-0.5 px-10 py-5" style={{ background: "#F1F1F1", color: "#151717" }}>
-                  Join The Movement
-                  <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                </button>
-              </Link>
-            </div>
-          </AnimatedElement>
-        </div>
-      </section>
     </div>
   );
 }
