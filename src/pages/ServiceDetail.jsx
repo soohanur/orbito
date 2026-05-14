@@ -179,22 +179,6 @@ export default function ServiceDetail() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="overflow-hidden" style={{ paddingTop: "clamp(3rem, 9vw, 7rem)", paddingBottom: "clamp(3rem, 9vw, 7rem)", background: "#151717" }}>
-        <div className="orbito-container">
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
-            <h2 className="font-black tracking-tighter" style={{ fontSize: "clamp(28px, 4.5vw, 60px)", lineHeight: 0.95, color: "#F1F1F1", letterSpacing: "-0.03em" }}>
-              Ready to get<br /><span style={{ color: "rgba(241,241,241,0.35)", fontWeight: 300 }}>started?</span>
-            </h2>
-            <Link to="/Agents">
-              <button className="inline-flex items-center gap-3 rounded-full text-sm font-semibold tracking-widest uppercase px-10 py-5"
-                style={{ background: "#F1F1F1", color: "#151717" }}>
-                Talk to an Agent <ArrowRight className="h-4 w-4" />
-              </button>
-            </Link>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

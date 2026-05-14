@@ -172,30 +172,6 @@ export default function About() {
         </div>
       </AnimatedElement>
 
-      {/* CTA */}
-      <section style={{ background: "#151717", paddingTop: "clamp(3rem, 9vw, 7rem)", paddingBottom: "clamp(3rem, 9vw, 7rem)" }}>
-        <div className="orbito-container">
-          <AnimatedElement>
-            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-10">
-              <h2 className="font-black tracking-tighter" style={{ fontSize: "clamp(40px, 5vw, 72px)", lineHeight: 0.93, color: "#F1F1F1", letterSpacing: "-0.04em" }}>
-                Ready to find<br /><span style={{ color: "rgba(241,241,241,0.35)", fontWeight: 300 }}>what moves you?</span>
-              </h2>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/Properties">
-                  <button className="group inline-flex items-center gap-3 rounded-full text-sm font-semibold tracking-widest uppercase transition-all duration-400 hover:-translate-y-0.5 px-8 py-4" style={{ background: "#F1F1F1", color: "#151717" }}>
-                    Search Properties <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                  </button>
-                </Link>
-                <Link to="/Join">
-                  <button className="group inline-flex items-center gap-3 rounded-full text-sm font-semibold tracking-widest uppercase transition-all duration-400 hover:-translate-y-0.5 px-8 py-4" style={{ border: "1px solid rgba(241,241,241,0.35)", color: "#F1F1F1" }}>
-                    Join as Agent <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                  </button>
-                </Link>
-              </div>
-            </div>
-          </AnimatedElement>
-        </div>
-      </section>
     </div>
   );
 }

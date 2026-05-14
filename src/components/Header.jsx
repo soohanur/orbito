@@ -5,6 +5,7 @@ import { useClientAuth } from "@/lib/ClientAuth";
 
 const INSIGHTS_ITEMS = [
   { label: "Services", to: "/Services" },
+  { label: "Blog", to: "/Blog" },
   { label: "About", to: "/About" },
   { label: "Contact", to: "/Contact" },
 ];
