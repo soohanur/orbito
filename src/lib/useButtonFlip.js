@@ -33,6 +33,13 @@ const getParentBg = (el) => {
 const setup = (btn) => {
   if (btn.dataset.flipReady) return;
 
+  // Opt-out: any button marked data-no-flip keeps its resting color
+  // on hover (no flip wired up at all).
+  if (btn.dataset.noFlip === "1") {
+    btn.dataset.flipReady = "skip";
+    return;
+  }
+
   const cs = getComputedStyle(btn);
   const bg = cs.backgroundColor;
   const color = cs.color;

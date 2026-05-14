@@ -549,11 +549,11 @@ function FinalCtaSection() {
           </h2>
           <Link to="/Properties">
             <button
-              className="group relative overflow-hidden inline-flex items-center gap-3 rounded-full text-base font-semibold tracking-widest uppercase transition-all duration-500 hover:-translate-y-1 px-10 py-5"
+              data-no-flip="1"
+              className="group relative overflow-hidden inline-flex items-center gap-3 rounded-full text-base font-semibold tracking-widest uppercase transition-all duration-500 px-10 py-5"
               style={{ background: "#F1F1F1", color: "#151717" }}>
-              
               <span className="relative">Let's Get Started</span>
-              <ArrowRight className="relative h-5 w-5 group-hover:translate-x-1.5 transition-transform" />
+              <ArrowRight className="relative h-5 w-5" />
             </button>
           </Link>
         </AnimatedElement>

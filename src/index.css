@@ -180,13 +180,23 @@ html.js-anim p:not(.anim-text):not(.anim-text-words):not(.no-anim) {
 }
 
 /* ─── Buttons: hover = color flip only ─── */
-/* Strip movement, shadow, and scale effects on button hover sitewide
-   so the only thing changing on hover is the color/border flip
-   handled by useButtonFlip. */
+/* Force every button to a 500ms color/border transition (matching the
+   home hero "Find Properties" timing) and strip every other hover
+   effect (translate, scale, shadow). useButtonFlip still drives the
+   bg/border/text swap on hover. */
+button,
+button * {
+  transition-property: background-color, border-color, color !important;
+  transition-duration: 500ms !important;
+  transition-timing-function: ease !important;
+}
 button:hover,
-button:hover * {
+button:hover *,
+button:focus-visible,
+button:focus-visible * {
   transform: none !important;
   box-shadow: none !important;
+  filter: none !important;
 }
 
 /* ─── Scrollbar ─── */
